@@ -128,10 +128,17 @@ export default function HomePage() {
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-6">Welcome to NEDApay</h2>
           <p className="text-foreground-secondary mb-6 leading-relaxed">
-            We leverage <strong className="text-foreground">stablecoins-to-fiat and fiat-to-stablecoin</strong> conversion through Payment Service Providers (PSPs) 
-            and Mobile Money/Mobile Network Operators (MMO/MNO) for <strong className="text-foreground">instant distribution</strong> 
-            across global markets.
+            We provide <strong className="text-foreground">blockchain infrastructure</strong> that enables Payment Service Providers (PSPs), 
+            Mobile Network Operators (MNOs), and Banks to offer <strong className="text-foreground">stablecoin services</strong> through 
+            their existing customer channels. Your customers use familiar interfaces while you leverage our Base network bridge for 
+            <strong className="text-foreground"> instant crypto-to-fiat conversion</strong>.
           </p>
+          <div className="p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+            <p className="text-sm text-blue-400">
+              <strong>Partner-First Approach:</strong> Keep your existing payment infrastructure, customer relationships, and compliance frameworks. 
+              We handle the blockchain complexity so you can focus on serving your customers.
+            </p>
+          </div>
         </section>
 
         {/* The Solution */}

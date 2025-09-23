@@ -6,9 +6,9 @@ export default function SmartContractsPage() {
       <div className="max-w-4xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">Smart Contract Interaction</h1>
+          <h1 className="text-3xl font-bold mb-2">Liquidity Pool Integration</h1>
           <p className="text-foreground-secondary">
-            Direct blockchain integration with NEDApay's multi-chain smart contracts on XRPL, Base, and Ethereum networks.
+            Direct blockchain integration with NEDApay's liquidity pool management on Base network for USDT/USDC transfers.
           </p>
         </div>
 

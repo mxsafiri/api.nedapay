@@ -6,9 +6,9 @@ export default function CreateOnRampOrderPage() {
       <div className="max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">Create On-ramp Order</h1>
+          <h1 className="text-3xl font-bold mb-2">Buy Stablecoins (Liquidity Request)</h1>
           <p className="text-foreground-secondary">
-            Create a new on-ramp order to receive stablecoins in exchange for fiat currency payments through local payment rails.
+            Request stablecoin transfer from NEDApay's liquidity pool to customer wallet. Partner handles fiat collection through existing channels.
           </p>
         </div>
 
@@ -29,8 +29,8 @@ export default function CreateOnRampOrderPage() {
           <ApiPlayground
             method="POST"
             endpoint="/receiver/orders"
-            title="Create On-ramp Order"
-            description="Create a new on-ramp order for fiat to stablecoin conversion"
+            title="Buy Stablecoins (Liquidity Request)"
+            description="Request stablecoin transfer from NEDApay's liquidity pool to customer wallet"
             requestBody={{
               "amount": "260000.00",
               "currency": "TZS",
@@ -49,7 +49,7 @@ export default function CreateOnRampOrderPage() {
             }}
             responseExample={{
               "status": "success",
-              "message": "On-ramp order created successfully",
+              "message": "Liquidity request created successfully",
               "data": {
                 "id": "550e8400-e29b-41d4-a716-446655440000",
                 "amount": "260000.00",
@@ -84,9 +84,8 @@ export default function CreateOnRampOrderPage() {
           <section id="overview">
             <h2 className="text-2xl font-semibold mb-4">Overview</h2>
             <p className="text-foreground-secondary mb-4">
-              The create on-ramp order endpoint allows users to initiate a fiat-to-stablecoin conversion. 
-              Users send fiat currency through local payment rails (mobile money, bank transfer) and receive 
-              stablecoins at their specified address. The order provides payment instructions and tracks the conversion process.
+              The buy stablecoins endpoint allows users to request stablecoin transfer from NEDApay's liquidity pool to customer wallet. 
+              Users handle fiat collection through existing channels and NEDApay handles the stablecoin transfer.
             </p>
             
             <div className="grid md:grid-cols-2 gap-6 mb-6">
@@ -104,9 +103,9 @@ export default function CreateOnRampOrderPage() {
               <div className="p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
                 <h4 className="font-medium text-blue-400 mb-2">⚡ Processing Flow</h4>
                 <ul className="text-sm text-blue-300 space-y-1">
-                  <li>• Order creation: Instant</li>
-                  <li>• Payment window: 30 minutes</li>
-                  <li>• Token delivery: 1-3 minutes after payment</li>
+                  <li>• Request creation: Instant</li>
+                  <li>• Fiat collection: Partner handled</li>
+                  <li>• Token delivery: 1-3 minutes after fiat confirmation</li>
                   <li>• Confirmation: Real-time webhooks</li>
                 </ul>
               </div>
@@ -135,7 +134,7 @@ export default function CreateOnRampOrderPage() {
                       <span className="px-2 py-1 bg-red-500/10 text-red-400 rounded text-xs">Required</span>
                     </td>
                     <td className="p-4 text-sm text-foreground-secondary">
-                      Amount of fiat currency to send (e.g., &quot;260000.00&quot; for 260,000 TZS)
+                      Amount of fiat currency to collect (e.g., &quot;260000.00&quot; for 260,000 TZS)
                     </td>
                   </tr>
                   <tr className="border-b border-border">
@@ -215,7 +214,7 @@ export default function CreateOnRampOrderPage() {
                       <span className="px-2 py-1 bg-yellow-500/10 text-yellow-400 rounded text-xs">Optional</span>
                     </td>
                     <td className="p-4 text-sm text-foreground-secondary">
-                      Order expiration time in seconds (default: 1800)
+                      Request expiration time in seconds (default: 1800)
                     </td>
                   </tr>
                 </tbody>
@@ -283,7 +282,7 @@ export default function CreateOnRampOrderPage() {
               <div className="p-4 bg-code-background border border-code-border rounded-lg font-mono text-sm">
                 <pre className="text-green-400">{`{
   "status": "success",
-  "message": "On-ramp order created successfully",
+  "message": "Liquidity request created successfully",
   "data": {
     "id": "550e8400-e29b-41d4-a716-446655440000",
     "amount": "260000.00",
@@ -327,11 +326,11 @@ export default function CreateOnRampOrderPage() {
             </div>
 
             <div className="mb-6">
-              <h3 className="text-lg font-medium mb-4">Order Status Flow</h3>
+              <h3 className="text-lg font-medium mb-4">Request Status Flow</h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div className="p-4 border border-border rounded-lg bg-background-secondary">
                   <div className="text-yellow-400 font-medium mb-2">pending_payment</div>
-                  <div className="text-sm text-foreground-secondary">Waiting for fiat payment</div>
+                  <div className="text-sm text-foreground-secondary">Waiting for fiat collection</div>
                 </div>
                 <div className="p-4 border border-border rounded-lg bg-background-secondary">
                   <div className="text-blue-400 font-medium mb-2">payment_received</div>
@@ -343,7 +342,7 @@ export default function CreateOnRampOrderPage() {
                 </div>
                 <div className="p-4 border border-border rounded-lg bg-background-secondary">
                   <div className="text-red-400 font-medium mb-2">expired/failed</div>
-                  <div className="text-sm text-foreground-secondary">Order expired or failed</div>
+                  <div className="text-sm text-foreground-secondary">Request expired or failed</div>
                 </div>
               </div>
             </div>
@@ -437,7 +436,7 @@ export default function CreateOnRampOrderPage() {
                     <div className="p-3 bg-code-background border border-code-border rounded font-mono text-sm">
                       <pre className="text-red-400">{`{
   "status": "error",
-  "message": "Order cannot be processed",
+  "message": "Request cannot be processed",
   "code": "INSUFFICIENT_LIQUIDITY",
   "details": "No providers available for TZS to USDT conversion at this time"
 }`}</pre>
@@ -452,7 +451,7 @@ export default function CreateOnRampOrderPage() {
                   <div className="space-y-4">
                     <h3 className="text-lg font-medium text-green-400">✅ Do</h3>
                     <ul className="space-y-2 text-sm text-foreground-secondary">
-                      <li>• Always get fresh rates before creating orders</li>
+                      <li>• Always get fresh rates before creating requests</li>
                       <li>• Validate receive addresses before submission</li>
                       <li>• Set reasonable expiration times (15-30 minutes)</li>
                       <li>• Use meaningful reference IDs for tracking</li>
@@ -465,8 +464,8 @@ export default function CreateOnRampOrderPage() {
                     <h3 className="text-lg font-medium text-red-400">❌ Don&apos;t</h3>
                     <ul className="space-y-2 text-sm text-foreground-secondary">
                       <li>• Don&apos;t reuse old exchange rates</li>
-                      <li>• Don&apos;t create orders without rate validation</li>
-                      <li>• Don&apos;t ignore order expiration times</li>
+                      <li>• Don&apos;t create requests without rate validation</li>
+                      <li>• Don&apos;t ignore request expiration times</li>
                       <li>• Don&apos;t hardcode payment institution codes</li>
                       <li>• Don&apos;t skip sender information validation</li>
                       <li>• Don&apos;t assume immediate token delivery</li>

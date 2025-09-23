@@ -16,36 +16,37 @@ export default function ArchitecturePage() {
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-6">Architecture Overview</h2>
           <p className="text-foreground-secondary mb-6 leading-relaxed">
-            NEDApay operates as a <strong className="text-foreground">secondary layer protocol</strong> that sits between 
-            the stablecoin ecosystem and traditional payment rails. Our omni-channel architecture enables seamless 
-            bidirectional conversion and instant global distribution through a unified API.
+            NEDApay operates as a <strong className="text-foreground">liquidity pool bridge</strong> that manages 
+            USDT/USDC reserves on Base network. Partners request stablecoin transfers from our pool while handling 
+            fiat operations through their existing channels. This creates a seamless crypto-fiat bridge without 
+            complex token issuance or regulatory overhead.
           </p>
 
           <div className="p-6 bg-background-secondary border border-border rounded-lg mb-6">
             <h3 className="text-lg font-medium mb-4">Core Architecture Principles</h3>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-medium mb-2 text-blue-400">Secondary Layer Design</h4>
+                <h4 className="font-medium mb-2 text-blue-400">Liquidity Pool Model</h4>
                 <p className="text-sm text-foreground-secondary">
-                  Operates above base payment rails but below application layer, providing unified access to fragmented infrastructure.
+                  Pre-funded USDT/USDC pools on Base network enable instant transfers without minting/burning complexity.
                 </p>
               </div>
               <div>
-                <h4 className="font-medium mb-2 text-green-400">Omni-Channel Access</h4>
+                <h4 className="font-medium mb-2 text-green-400">Partner Integration</h4>
                 <p className="text-sm text-foreground-secondary">
-                  Single protocol interface accessing PSPs, MMOs, MNOs, banks, and crypto networks simultaneously.
+                  Partners handle customer interaction and fiat operations while NEDApay manages blockchain transfers.
                 </p>
               </div>
               <div>
-                <h4 className="font-medium mb-2 text-orange-400">Intelligent Routing</h4>
+                <h4 className="font-medium mb-2 text-orange-400">Settlement Efficiency</h4>
                 <p className="text-sm text-foreground-secondary">
-                  AI-powered aggregator nodes optimize provider selection based on cost, speed, and reliability.
+                  Daily settlement cycles and automated rebalancing optimize liquidity and reduce operational overhead.
                 </p>
               </div>
               <div>
-                <h4 className="font-medium mb-2 text-purple-400">Instant Settlement</h4>
+                <h4 className="font-medium mb-2 text-purple-400">Regulatory Simplicity</h4>
                 <p className="text-sm text-foreground-secondary">
-                  Blockchain-based settlement coordination ensures atomic transactions across multiple providers.
+                  Liquidity provider model avoids token issuer regulations while maintaining full compliance.
                 </p>
               </div>
             </div>
@@ -136,29 +137,29 @@ export default function ArchitecturePage() {
               <div className="flex items-center mb-4">
                 <Shield className="h-8 w-8 text-blue-400 mr-4" />
                 <div>
-                  <h3 className="text-xl font-semibold">Gateway Smart Contract (Base Network)</h3>
-                  <p className="text-sm text-foreground-secondary">Multi-chain order management and settlement with Base as primary network</p>
+                  <h3 className="text-xl font-semibold">Liquidity Pool Manager (Base Network)</h3>
+                  <p className="text-sm text-foreground-secondary">Multi-sig wallet system for USDT/USDC pool management and partner transfers</p>
                 </div>
               </div>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h4 className="font-medium mb-3">Functions:</h4>
                   <ul className="space-y-2 text-sm text-foreground-secondary">
-                    <li>• Order creation and validation on Base network</li>
-                    <li>• Multi-currency support (TZSC, KESC, UGXC stablecoins)</li>
-                    <li>• Cross-chain settlement coordination</li>
-                    <li>• Event emission for aggregator monitoring</li>
-                    <li>• EVM-compatible smart contract execution</li>
+                    <li>• USDT/USDC transfer operations from pool</li>
+                    <li>• Multi-currency support (USDT, USDC, DAI)</li>
+                    <li>• Partner balance tracking and settlement</li>
+                    <li>• Automated liquidity rebalancing</li>
+                    <li>• Multi-sig security for large transfers</li>
                   </ul>
                 </div>
                 <div>
                   <h4 className="font-medium mb-3">Benefits:</h4>
                   <ul className="space-y-2 text-sm text-foreground-secondary">
                     <li>• Ultra-low transaction fees (~$0.01)</li>
-                    <li>• Fast settlement (2-3 seconds)</li>
-                    <li>• EVM compatibility for DeFi integration</li>
-                    <li>• Multi-chain interoperability</li>
-                    <li>• Coinbase institutional backing</li>
+                    <li>• Instant transfer execution (2-3 seconds)</li>
+                    <li>• No token issuance regulatory complexity</li>
+                    <li>• Proven USDT/USDC token reliability</li>
+                    <li>• Multi-sig treasury security</li>
                   </ul>
                 </div>
               </div>

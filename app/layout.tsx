@@ -53,9 +53,9 @@ const madeTommy = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://docs.nedapay.io'),
-  title: 'NEDApay Documentation - East African Payment Protocol',
-  description: 'Complete developer documentation for NEDApay - the decentralized payment routing protocol for East Africa. Integrate instant, secure, zero-fee payments.',
-  keywords: 'NEDApay, East Africa, payments, API, documentation, Tanzania, Kenya, Uganda, mobile money, stablecoins',
+  title: 'NEDApay Documentation - East African Blockchain Bridge',
+  description: 'Complete developer documentation for NEDApay - the blockchain infrastructure bridge for East Africa. Enable stablecoin services through your existing payment channels.',
+  keywords: 'NEDApay, East Africa, blockchain bridge, API, documentation, Tanzania, Kenya, Uganda, mobile money, stablecoins, PSP, MNO, banks',
   authors: [{ name: 'NEDApay Team' }],
   icons: {
     icon: '/favicon.ico',
