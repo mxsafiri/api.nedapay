@@ -136,29 +136,29 @@ export default function ArchitecturePage() {
               <div className="flex items-center mb-4">
                 <Shield className="h-8 w-8 text-blue-400 mr-4" />
                 <div>
-                  <h3 className="text-xl font-semibold">Gateway Smart Contract (XRPL)</h3>
-                  <p className="text-sm text-foreground-secondary">Blockchain-based order management and settlement</p>
+                  <h3 className="text-xl font-semibold">Gateway Smart Contract (Base Network)</h3>
+                  <p className="text-sm text-foreground-secondary">Multi-chain order management and settlement with Base as primary network</p>
                 </div>
               </div>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h4 className="font-medium mb-3">Functions:</h4>
                   <ul className="space-y-2 text-sm text-foreground-secondary">
-                    <li>• Order creation and validation</li>
-                    <li>• Multi-currency support (TZS, KES, UGX stablecoins)</li>
-                    <li>• Settlement coordination between providers</li>
+                    <li>• Order creation and validation on Base network</li>
+                    <li>• Multi-currency support (TZSC, KESC, UGXC stablecoins)</li>
+                    <li>• Cross-chain settlement coordination</li>
                     <li>• Event emission for aggregator monitoring</li>
-                    <li>• Escrow and atomic settlement</li>
+                    <li>• EVM-compatible smart contract execution</li>
                   </ul>
                 </div>
                 <div>
                   <h4 className="font-medium mb-3">Benefits:</h4>
                   <ul className="space-y-2 text-sm text-foreground-secondary">
-                    <li>• Immutable transaction records</li>
-                    <li>• Automated settlement logic</li>
-                    <li>• Cross-border interoperability</li>
-                    <li>• Reduced counterparty risk</li>
-                    <li>• 24/7 availability</li>
+                    <li>• Ultra-low transaction fees (~$0.01)</li>
+                    <li>• Fast settlement (2-3 seconds)</li>
+                    <li>• EVM compatibility for DeFi integration</li>
+                    <li>• Multi-chain interoperability</li>
+                    <li>• Coinbase institutional backing</li>
                   </ul>
                 </div>
               </div>
