@@ -333,7 +333,7 @@ export default function ListPaymentOrdersPage() {
               <h4 className="font-medium text-yellow-400 mb-2">⚠️ Important Notes</h4>
               <ul className="text-sm text-yellow-300 space-y-1">
                 <li>• Maximum <code>limit</code> is 100 orders per request</li>
-                <li>• Large offsets (>10,000) may have slower response times</li>
+                <li>• Large offsets (&gt;10,000) may have slower response times</li>
                 <li>• Orders are cached for 30 seconds for performance</li>
               </ul>
             </div>

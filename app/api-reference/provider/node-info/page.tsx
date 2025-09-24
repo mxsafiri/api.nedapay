@@ -462,7 +462,7 @@ export default function GetNodeInfoPage() {
               <div className="space-y-4">
                 <h3 className="text-lg font-medium text-red-400">⚠️ Critical Warnings</h3>
                 <ul className="space-y-2 text-sm text-foreground-secondary">
-                  <li>• Avoid large orders when utilization > 80%</li>
+                  <li>• Avoid large orders when utilization &gt; 80%</li>
                   <li>• Don't ignore network health alerts</li>
                   <li>• Pause operations during maintenance windows</li>
                   <li>• Monitor Base network congestion during peak hours</li>

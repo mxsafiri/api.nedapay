@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { usePathname } from 'next/navigation'
 import { ChevronDown, ChevronRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -113,7 +113,7 @@ const apiReferenceData: SidebarItem[] = [
 
 function SidebarSection({ item, level = 0, pathname }: { item: SidebarItem; level?: number; pathname: string }) {
   // Determine if this section should be open based on current path
-  const shouldBeOpen = () => {
+  const shouldBeOpen = useCallback(() => {
     if (!item.items) return false
     
     // Check if any child item matches the current path
@@ -122,7 +122,7 @@ function SidebarSection({ item, level = 0, pathname }: { item: SidebarItem; leve
            (item.href && pathname === item.href) ||
            // Check if current path starts with this section's base path
            (item.href && pathname.startsWith(item.href + '/'))
-  }
+  }, [item.items, item.href, pathname])
   
   const [isOpen, setIsOpen] = useState(() => shouldBeOpen())
   const hasItems = item.items && item.items.length > 0
@@ -130,7 +130,7 @@ function SidebarSection({ item, level = 0, pathname }: { item: SidebarItem; leve
   // Update open state when pathname changes
   useEffect(() => {
     setIsOpen(shouldBeOpen())
-  }, [pathname])
+  }, [shouldBeOpen])
 
   if (!hasItems && item.href) {
     return (
