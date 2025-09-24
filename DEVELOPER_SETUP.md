@@ -1,7 +1,7 @@
 # NEDApay Developer Setup Checklist
 
 ## 🚀 Quick Start Guide
-
+We're building a liquidity pool bridge (not a token issuer). Focus on simple USDT/USDC transfers between our pool and customers through partner API requests. The documentation site shows exactly what the APIs should do - you just need to implement the backend logic
 ### Prerequisites
 - [ ] Node.js 18+ installed
 - [ ] Git access to repository
