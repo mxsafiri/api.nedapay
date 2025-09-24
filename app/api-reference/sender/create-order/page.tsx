@@ -6,9 +6,9 @@ export default function CreatePaymentOrderPage() {
       <div className="max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">Initiate Payment Order</h1>
+          <h1 className="text-3xl font-bold mb-2">Create Payment Order</h1>
           <p className="text-foreground-secondary">
-            Create a new payment order to send tokens and receive fiat currency in East African markets.
+            Create a payment order to transfer stablecoins from NEDApay's liquidity pools to fiat currency in East African markets.
           </p>
         </div>
 
@@ -29,8 +29,8 @@ export default function CreatePaymentOrderPage() {
           <ApiPlayground
             method="POST"
             endpoint="/sender/orders"
-            title="Initiate Payment Order"
-            description="Create a new payment order for token to fiat conversion"
+            title="Create Payment Order"
+            description="Create a payment order for stablecoin to fiat conversion via liquidity pools"
             requestBody={{
               "amount": "100",
               "token": "USDT",
@@ -72,20 +72,20 @@ export default function CreatePaymentOrderPage() {
           <section id="overview">
             <h2 className="text-2xl font-semibold mb-4">Overview</h2>
             <p className="text-foreground-secondary mb-4">
-              The create payment order endpoint allows you to initiate a new payment from a supported token 
-              (like USDT, USDC) to fiat currency in East African markets. The order will be processed by 
-              available liquidity providers in the NEDApay network.
+              The create payment order endpoint allows you to request stablecoin transfers from NEDApay's 
+              liquidity pools on Base network to fiat currency in East African markets. Your customers 
+              receive fiat through local PSPs/MNOs while you handle the stablecoin settlement.
             </p>
             
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
                 <h4 className="font-medium text-green-400 mb-2">✅ Supported Features</h4>
                 <ul className="text-sm text-green-300 space-y-1">
-                  <li>• Multi-chain token support (XRPL, Base, Ethereum)</li>
-                  <li>• Real-time rate quotes</li>
-                  <li>• Mobile money integration</li>
+                  <li>• Base network liquidity pools (USDT/USDC)</li>
+                  <li>• Real-time exchange rates</li>
+                  <li>• Mobile money integration (M-Pesa, Mixx by Yas)</li>
                   <li>• Bank account transfers</li>
-                  <li>• Automatic provider matching</li>
+                  <li>• Automated settlement & rebalancing</li>
                 </ul>
               </div>
               
@@ -93,8 +93,8 @@ export default function CreatePaymentOrderPage() {
                 <h4 className="font-medium text-blue-400 mb-2">⚡ Processing Time</h4>
                 <ul className="text-sm text-blue-300 space-y-1">
                   <li>• Order creation: Instant</li>
-                  <li>• Provider matching: &lt; 30 seconds</li>
-                  <li>• Settlement: 1-2 minutes</li>
+                  <li>• Liquidity allocation: &lt; 10 seconds</li>
+                  <li>• Fiat delivery: 1-2 minutes</li>
                   <li>• Total time: ~2-3 minutes</li>
                 </ul>
               </div>
@@ -143,7 +143,7 @@ export default function CreatePaymentOrderPage() {
                       <span className="px-2 py-1 bg-red-500/10 text-red-400 rounded text-xs">Required</span>
                     </td>
                     <td className="p-4 text-sm text-foreground-secondary">
-                      Blockchain network (xrpl, base, ethereum, polygon)
+                      Blockchain network (base is primary, ethereum/polygon supported)
                     </td>
                   </tr>
                   <tr className="border-b border-border">
@@ -264,8 +264,8 @@ export default function CreatePaymentOrderPage() {
           <section id="response">
             <h2 className="text-2xl font-semibold mb-4">Response Format</h2>
             <p className="text-foreground-secondary mb-4">
-              Upon successful creation, the API returns a payment order object with all necessary details 
-              for completing the transaction.
+              Upon successful creation, the API returns a payment order object with liquidity pool allocation 
+              details and settlement information for completing the stablecoin transfer.
             </p>
             
             <h3 className="text-lg font-medium mb-3">Success Response (201 Created)</h3>
@@ -295,9 +295,9 @@ export default function CreatePaymentOrderPage() {
                 <h4 className="font-medium mb-2">Core Fields</h4>
                 <ul className="space-y-2 text-sm text-foreground-secondary">
                   <li><code>id</code> - Unique order identifier (use this to track the order)</li>
-                  <li><code>receiveAddress</code> - Blockchain address to send your tokens to</li>
-                  <li><code>validUntil</code> - Expiration time for this order (typically 15 minutes)</li>
-                  <li><code>status</code> - Current order status (pending, processing, completed, failed)</li>
+                  <li><code>receiveAddress</code> - NEDApay pool address for stablecoin settlement</li>
+                  <li><code>validUntil</code> - Order expiration time (typically 15 minutes)</li>
+                  <li><code>status</code> - Current order status (pending, allocated, completed, failed)</li>
                 </ul>
               </div>
               
@@ -339,12 +339,12 @@ export default function CreatePaymentOrderPage() {
 
               {/* Bank Transfer Example */}
               <div>
-                <h3 className="text-lg font-medium mb-3">Bank Transfer</h3>
+                <h3 className="text-lg font-medium mb-3">Bank Transfer (Tanzania)</h3>
                 <div className="p-4 bg-code-background border border-code-border rounded-lg font-mono text-sm">
 {`{
   "amount": "200",
   "token": "USDC",
-  "network": "ethereum",
+  "network": "base",
   "recipient": {
     "institution": "CRDB",
     "accountIdentifier": "0123456789",
@@ -365,7 +365,7 @@ export default function CreatePaymentOrderPage() {
 {`{
   "amount": "75",
   "token": "USDT",
-  "network": "xrpl",
+  "network": "base",
   "recipient": {
     "institution": "MPESA",
     "accountIdentifier": "254712345678",
@@ -374,7 +374,7 @@ export default function CreatePaymentOrderPage() {
     "memo": "Family support"
   },
   "reference": "family-support-001",
-  "returnAddress": "rN7n7otQDd6FczFgLdSqtcsAUxDkw96tZy"
+  "returnAddress": "0x742d35Cc6634C0532925a3b8D0C9964E5Bfe9999"
 }`}
                 </div>
               </div>
@@ -428,7 +428,7 @@ export default function CreatePaymentOrderPage() {
   "message": "Insufficient liquidity",
   "error": {
     "code": "INSUFFICIENT_LIQUIDITY",
-    "details": "No providers available for this currency pair"
+    "details": "Pool balance too low for requested amount. Available: 50 USDT"
   }
 }`}
                 </div>

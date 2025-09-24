@@ -8,7 +8,7 @@ export default function ApiReferencePage() {
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">Introduction</h1>
           <p className="text-foreground-secondary">
-            API Reference for NEDApay. Explore endpoints, request/response formats, and integration details.
+            API Reference for NEDApay's liquidity pool bridge. Explore endpoints for stablecoin-to-fiat conversion, request/response formats, and integration details.
           </p>
         </div>
 
@@ -33,8 +33,8 @@ export default function ApiReferencePage() {
           </div>
 
           <p className="text-foreground-secondary mb-4">
-            The NEDApay Aggregator API provides a comprehensive interface for interacting with the NEDApay protocol. 
-            This API enables senders to create payment orders, providers to fulfill orders, and general access to protocol information.
+            The NEDApay API provides a comprehensive interface for accessing our liquidity pool bridge on Base network. 
+            This API enables PSPs/MNOs to request stablecoin transfers from our pools, manage payment orders, and access real-time settlement information.
           </p>
         </section>
 

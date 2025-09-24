@@ -8,7 +8,7 @@ export default function GetPaymentOrderPage() {
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">Get payment order by ID</h1>
           <p className="text-foreground-secondary">
-            Retrieve detailed information about a specific payment order using its unique identifier.
+            Retrieve detailed information about a specific payment order including liquidity allocation status and settlement details.
           </p>
         </div>
 
@@ -54,13 +54,13 @@ export default function GetPaymentOrderPage() {
                 "network": "base",
                 "gatewayId": "550e8400-e29b-41d4-a716-446655440000",
                 "recipient": {
-                  "institution": "GTB",
-                  "accountIdentifier": "1234567890",
+                  "institution": "VODACOM",
+                  "accountIdentifier": "255744123456",
                   "accountName": "John Doe",
                   "memo": "Payment for services",
                   "providerId": "550e8400-e29b-41d4-a716-446655440000",
                   "metadata": {},
-                  "currency": "NGN"
+                  "currency": "TZS"
                 },
                 "fromAddress": "0x1234567890123456789012345678901234567890",
                 "returnAddress": "0x1234567890123456789012345678901234567890",
@@ -81,8 +81,8 @@ export default function GetPaymentOrderPage() {
             <h2 className="text-2xl font-semibold mb-4">Overview</h2>
             <p className="text-foreground-secondary mb-4">
               This endpoint allows you to retrieve detailed information about a specific payment order 
-              using its unique identifier. The response includes all order details, recipient information, 
-              current status, and transaction metadata.
+              using its unique identifier. The response includes liquidity allocation details, recipient information, 
+              current status, and settlement metadata from NEDApay's pool operations.
             </p>
             <div className="p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
               <p className="text-blue-400 text-sm">
