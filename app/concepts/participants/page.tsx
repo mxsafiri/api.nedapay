@@ -113,8 +113,8 @@ export default function ParticipantsPage() {
                 <div>
                   <h4 className="font-medium mb-2">Examples:</h4>
                   <ul className="space-y-1 text-sm text-foreground-secondary">
-                    <li>• M-Pesa (Safaricom)</li>
-                    <li>• Tigo Pesa (Tigo)</li>
+                    <li>• M-Pesa (Vodacom)</li>
+                    <li>• Mixx by Yas</li>
                     <li>• Airtel Money (Airtel)</li>
                     <li>• MTN Mobile Money</li>
                   </ul>
