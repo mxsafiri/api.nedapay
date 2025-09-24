@@ -1,6 +1,11 @@
+'use client'
+
+import { useState } from 'react'
 import { Copy, Code, CheckCircle, ArrowRight, Zap, DollarSign, Shield, Users } from 'lucide-react'
+import { ApplicationForm } from '@/components/application-form'
 
 export default function ProviderSetupPage() {
+  const [isApplicationFormOpen, setIsApplicationFormOpen] = useState(false)
   return (
     <div className="container mx-auto px-6 py-8">
       <div className="max-w-4xl">
@@ -128,8 +133,13 @@ export default function ProviderSetupPage() {
             <div className="p-6 border border-border rounded-lg bg-background-secondary">
               <div className="flex items-center mb-4">
                 <DollarSign className="h-8 w-8 text-orange-400 mr-4" />
-                <div>
-                  <h3 className="text-xl font-semibold">Individual Liquidity Provider</h3>
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-1">
+                    <h3 className="text-xl font-semibold">Individual Liquidity Provider</h3>
+                    <span className="px-2 py-1 text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-400 rounded-full">
+                      Coming Soon
+                    </span>
+                  </div>
                   <p className="text-sm text-foreground-secondary">Independent providers with local market access</p>
                 </div>
               </div>
@@ -461,14 +471,14 @@ POST /webhooks/nedapay/orders
               Start earning fees by providing liquidity to our global omni-channel network
             </p>
             <div className="flex justify-center space-x-4">
-              <a 
-                href="#" 
+              <button 
+                onClick={() => setIsApplicationFormOpen(true)}
                 className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
               >
                 Apply Now
-              </a>
+              </button>
               <a 
-                href="#" 
+                href="mailto:info@nedapay.xyz?subject=Schedule%20Demo%20Request" 
                 className="px-6 py-3 border border-border hover:bg-background-secondary rounded-lg font-medium transition-colors"
               >
                 Schedule Demo
@@ -477,6 +487,12 @@ POST /webhooks/nedapay/orders
           </div>
         </section>
       </div>
+
+      {/* Application Form Modal */}
+      <ApplicationForm 
+        isOpen={isApplicationFormOpen}
+        onClose={() => setIsApplicationFormOpen(false)}
+      />
     </div>
   )
 }

@@ -131,7 +131,7 @@ export default function HomePage() {
             We provide <strong className="text-foreground">blockchain infrastructure</strong> that enables Payment Service Providers (PSPs), 
             Mobile Network Operators (MNOs), and Banks to offer <strong className="text-foreground">stablecoin services</strong> through 
             their existing customer channels. Your customers use familiar interfaces while you leverage our Base network bridge for 
-            <strong className="text-foreground"> instant crypto-to-fiat conversion</strong>.
+            <strong className="text-foreground"> instant stablecoin-to-fiat conversion</strong>.
           </p>
           <div className="p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
             <p className="text-sm text-blue-400">
@@ -211,7 +211,7 @@ export default function HomePage() {
                   </li>
                   <li className="flex items-center">
                     <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
-                    Built by Coinbase with institutional-grade security
+                    Institutional-grade security and reliability
                   </li>
                   <li className="flex items-center">
                     <div className="w-2 h-2 bg-orange-400 rounded-full mr-3"></div>
