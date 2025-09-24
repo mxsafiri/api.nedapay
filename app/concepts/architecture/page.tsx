@@ -1,4 +1,7 @@
+'use client'
+
 import { Layers, Network, Database, Shield, Zap, ArrowRight } from 'lucide-react'
+import { ArchitectureDiagram } from '@/components/architecture-diagram'
 
 export default function ArchitecturePage() {
   return (
@@ -50,6 +53,15 @@ export default function ArchitecturePage() {
                 </p>
               </div>
             </div>
+          </div>
+
+          {/* Animated Architecture Diagram */}
+          <div className="mb-8">
+            <h3 className="text-lg font-medium mb-4 text-center">Orchestration Flow</h3>
+            <ArchitectureDiagram />
+            <p className="text-sm text-foreground-secondary text-center mt-4">
+              Interactive diagram showing the flow from customer request to settlement and rebalancing
+            </p>
           </div>
         </section>
 
