@@ -242,10 +242,10 @@ export function ArchitectureDiagram() {
 
       {/* Moving Fund Indicator with Animated Labels */}
       <div className={`absolute transition-all duration-1000 ease-in-out ${
-        animationPhase === 0 ? 'left-16 top-24 opacity-100' : 
+        animationPhase === 0 ? 'left-1/2 top-24 -translate-x-1/2 opacity-100' : // Fiat Request travels to center
         animationPhase === 1 ? 'right-16 top-24 opacity-100' :
         animationPhase === 2 ? 'left-1/2 top-24 -translate-x-1/2 opacity-100' :
-        'left-16 top-24 opacity-100'
+        'left-16 top-24 opacity-100' // Fiat Delivered travels back to PSP
       }`}>
         <div className="flex flex-col items-center space-y-2">
           <div className={`w-4 h-4 rounded-full animate-pulse shadow-lg border-2 transition-all duration-500 ${
@@ -269,6 +269,22 @@ export function ArchitectureDiagram() {
           </div>
         </div>
       </div>
+
+      {/* Traveling Fiat Request Animation - Phase 0: PSP to NEDApay Core */}
+      {animationPhase === 0 && (
+        <div className="absolute left-16 top-24">
+          <div className="flex flex-col items-center space-y-2" 
+               style={{
+                 animation: 'travel-to-core 1s ease-in-out forwards',
+                 transform: 'translateX(0) translateY(0)'
+               }}>
+            <div className="w-4 h-4 bg-yellow-400 border-yellow-600 rounded-full animate-pulse shadow-lg border-2 scale-110"></div>
+            <div className="text-xs font-medium px-3 py-1 rounded-full shadow-lg bg-blue-500 text-white">
+              Fiat Request
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Enhanced PSP Request Animation - Yellow Ball traveling to NEDApay Core */}
       {animationPhase === 0 && (
@@ -320,11 +336,20 @@ export function ArchitectureDiagram() {
         </div>
       )}
 
-      {/* Enhanced Fiat Delivery Animation - Green Ball traveling from NEDApay Core to PSP */}
+      {/* Traveling Fiat Delivered Animation - Phase 3: NEDApay Core to PSP */}
       {animationPhase === 3 && (
         <>
           <div className="absolute left-1/2 top-24 -translate-x-1/2">
-            <div className="w-3 h-3 bg-green-400 rounded-full shadow-lg border-2 border-green-600 animate-pulse travel-from-core" />
+            <div className="flex flex-col items-center space-y-2" 
+                 style={{
+                   animation: 'travel-from-core 1s ease-in-out forwards',
+                   transform: 'translateX(0) translateY(0)'
+                 }}>
+              <div className="w-4 h-4 bg-green-400 border-green-600 rounded-full animate-pulse shadow-lg border-2 scale-110"></div>
+              <div className="text-xs font-medium px-3 py-1 rounded-full shadow-lg bg-green-600 text-white">
+                Fiat Delivered
+              </div>
+            </div>
           </div>
           
           <div className="absolute left-2 top-32">
@@ -333,7 +358,7 @@ export function ArchitectureDiagram() {
                 ✅
               </div>
               <div className="text-xs text-green-600 dark:text-green-400 font-medium bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded">
-                Fiat Delivered
+                Settlement Complete
               </div>
             </div>
           </div>
