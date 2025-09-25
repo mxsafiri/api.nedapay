@@ -15,6 +15,15 @@ export default function ArchitecturePage() {
           </p>
         </div>
 
+        {/* Animated Architecture Diagram - Moved up for better visibility */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4 text-center">Orchestration Flow</h2>
+          <ArchitectureDiagram />
+          <p className="text-sm text-foreground-secondary text-center mt-4">
+            Interactive diagram showing the flow from customer request to settlement and rebalancing
+          </p>
+        </div>
+
         {/* Architecture Overview */}
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-6">Architecture Overview</h2>
@@ -53,15 +62,6 @@ export default function ArchitecturePage() {
                 </p>
               </div>
             </div>
-          </div>
-
-          {/* Animated Architecture Diagram */}
-          <div className="mb-8">
-            <h3 className="text-lg font-medium mb-4 text-center">Orchestration Flow</h3>
-            <ArchitectureDiagram />
-            <p className="text-sm text-foreground-secondary text-center mt-4">
-              Interactive diagram showing the flow from customer request to settlement and rebalancing
-            </p>
           </div>
         </section>
 

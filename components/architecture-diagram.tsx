@@ -218,20 +218,42 @@ export function ArchitectureDiagram() {
             opacity: 0.3;
           }
         }
+        @keyframes travel-from-core {
+          0% { 
+            transform: translateX(120px) translateY(20px) scale(1);
+            opacity: 1;
+          }
+          50% { 
+            transform: translateX(60px) translateY(35px) scale(0.8);
+            opacity: 0.8;
+          }
+          100% { 
+            transform: translateX(0) translateY(0) scale(0.6);
+            opacity: 0.3;
+          }
+        }
         .travel-to-core {
           animation: travel-to-core 2s ease-in-out infinite;
+        }
+        .travel-from-core {
+          animation: travel-from-core 1s ease-in-out forwards;
         }
       `}</style>
 
       {/* Moving Fund Indicator with Animated Labels */}
-      <div className={`absolute transition-all duration-1000 ${
+      <div className={`absolute transition-all duration-1000 ease-in-out ${
         animationPhase === 0 ? 'left-16 top-24 opacity-100' : 
         animationPhase === 1 ? 'right-16 top-24 opacity-100' :
         animationPhase === 2 ? 'left-1/2 top-24 -translate-x-1/2 opacity-100' :
         'left-16 top-24 opacity-100'
       }`}>
         <div className="flex flex-col items-center space-y-2">
-          <div className="w-4 h-4 bg-yellow-400 rounded-full animate-pulse shadow-lg border-2 border-yellow-600"></div>
+          <div className={`w-4 h-4 rounded-full animate-pulse shadow-lg border-2 transition-all duration-500 ${
+            animationPhase === 0 ? 'bg-yellow-400 border-yellow-600 scale-110' :
+            animationPhase === 1 ? 'bg-green-400 border-green-600 scale-110' :
+            animationPhase === 2 ? 'bg-orange-400 border-orange-600 scale-110' :
+            'bg-green-400 border-green-600 scale-110'
+          }`}></div>
           
           {/* Animated Text Labels that follow the ball */}
           <div className={`text-xs font-medium px-3 py-1 rounded-full shadow-lg transition-all duration-500 ${
@@ -247,6 +269,17 @@ export function ArchitectureDiagram() {
           </div>
         </div>
       </div>
+
+      {/* Enhanced PSP Request Animation - Yellow Ball traveling to NEDApay Core */}
+      {animationPhase === 0 && (
+        <div className="absolute left-16 top-24">
+          <div className="w-3 h-3 bg-yellow-400 rounded-full shadow-lg border-2 border-yellow-600 animate-pulse" 
+               style={{
+                 animation: 'travel-to-core 1s ease-in-out forwards',
+                 transform: 'translateX(0) translateY(0)'
+               }} />
+        </div>
+      )}
 
       {/* Fiat Request Animation - Phase 0 Only */}
       {animationPhase === 0 && (
@@ -287,18 +320,24 @@ export function ArchitectureDiagram() {
         </div>
       )}
 
-      {/* Delivery Animation - Phase 3 Only */}
+      {/* Enhanced Fiat Delivery Animation - Green Ball traveling from NEDApay Core to PSP */}
       {animationPhase === 3 && (
-        <div className="absolute left-2 top-32">
-          <div className="flex flex-col items-center space-y-1">
-            <div className="text-lg animate-bounce text-green-600">
-              ✅
-            </div>
-            <div className="text-xs text-green-600 dark:text-green-400 font-medium bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded">
-              Fiat Delivered
+        <>
+          <div className="absolute left-1/2 top-24 -translate-x-1/2">
+            <div className="w-3 h-3 bg-green-400 rounded-full shadow-lg border-2 border-green-600 animate-pulse travel-from-core" />
+          </div>
+          
+          <div className="absolute left-2 top-32">
+            <div className="flex flex-col items-center space-y-1">
+              <div className="text-lg animate-bounce text-green-600">
+                ✅
+              </div>
+              <div className="text-xs text-green-600 dark:text-green-400 font-medium bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded">
+                Fiat Delivered
+              </div>
             </div>
           </div>
-        </div>
+        </>
       )}
 
       {/* Simplified Static Status Indicators */}
