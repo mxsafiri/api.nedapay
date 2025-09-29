@@ -78,6 +78,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="/favicon.ico" />
       </head>
@@ -91,9 +92,9 @@ export default function RootLayout({
         >
           <div className="min-h-screen bg-background">
             <Header />
-            <div className="flex pt-26">
+            <div className="flex pt-26 flex-col lg:flex-row">
               <Sidebar />
-              <main className="flex-1 ml-64">
+              <main className="flex-1 lg:ml-64">
                 {children}
               </main>
             </div>

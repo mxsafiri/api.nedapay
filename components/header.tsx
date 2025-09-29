@@ -1,13 +1,15 @@
 "use client"
 
-import { Search, Github } from 'lucide-react'
+import { Search, Github, Menu } from 'lucide-react'
 import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { CommandPalette } from './command-palette'
 import { ThemeSwitch } from './theme-switch'
+import { MobileMenu } from './mobile-menu'
 
 export function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
 
   const isApiReference = pathname?.startsWith('/api-reference')
@@ -17,7 +19,15 @@ export function Header() {
     <>
       {/* Main Header */}
       <header className="fixed top-0 z-50 w-full bg-background border-b border-border">
-        <div className="flex h-14 items-center px-6">
+        <div className="flex h-14 items-center px-4 sm:px-6">
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(true)}
+            className="mr-3 p-2 hover:bg-background-secondary rounded-lg transition-colors lg:hidden"
+          >
+            <Menu className="h-5 w-5" />
+          </button>
+
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <img 
@@ -40,7 +50,7 @@ export function Header() {
             >
               <Search className="h-4 w-4" />
               <span>Search...</span>
-              <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border border-border bg-background px-1.5 font-mono text-xs text-foreground-muted">
+              <kbd className="pointer-events-none hidden sm:inline-flex h-5 select-none items-center gap-1 rounded border border-border bg-background px-1.5 font-mono text-xs text-foreground-muted">
                 ⌘K
               </kbd>
             </button>
@@ -78,8 +88,8 @@ export function Header() {
 
       {/* Sub Header - Navigation */}
       <div className="fixed top-14 z-40 w-full bg-background border-b border-border">
-        <div className="flex h-12 items-center px-6">
-          <nav className="flex items-center space-x-8">
+        <div className="flex h-12 items-center px-4 sm:px-6 overflow-x-auto">
+          <nav className="flex items-center space-x-6 sm:space-x-8 whitespace-nowrap">
             <a 
               href="/guides" 
               className={`text-sm font-medium transition-colors relative pb-3 ${
@@ -105,6 +115,7 @@ export function Header() {
       </div>
 
       <CommandPalette open={isSearchOpen} onOpenChange={setIsSearchOpen} />
+      <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
     </>
   )
 }

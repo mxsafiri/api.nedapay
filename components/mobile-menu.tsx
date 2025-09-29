@@ -1,8 +1,8 @@
 "use client"
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
-import { ChevronDown, ChevronRight } from 'lucide-react'
+import { X, Menu, ChevronDown, ChevronRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 interface SidebarItem {
@@ -111,31 +111,34 @@ const apiReferenceData: SidebarItem[] = [
   },
 ]
 
-function SidebarSection({ item, level = 0, pathname }: { item: SidebarItem; level?: number; pathname: string }) {
-  // Determine if this section should be open based on current path
-  const shouldBeOpen = useCallback(() => {
+function MobileMenuSection({ item, level = 0, pathname, onItemClick }: { 
+  item: SidebarItem; 
+  level?: number; 
+  pathname: string;
+  onItemClick: () => void;
+}) {
+  const [isOpen, setIsOpen] = useState(() => {
     if (!item.items) return false
-    
-    // Check if any child item matches the current path
     return item.items.some(child => pathname === child.href) || 
-           // Check if the section itself matches the current path
            (item.href && pathname === item.href) ||
-           // Check if current path starts with this section's base path
            (item.href && pathname.startsWith(item.href + '/'))
-  }, [item.items, item.href, pathname])
+  })
   
-  const [isOpen, setIsOpen] = useState(() => shouldBeOpen())
   const hasItems = item.items && item.items.length > 0
-  
-  // Update open state when pathname changes
+
   useEffect(() => {
-    setIsOpen(shouldBeOpen())
-  }, [shouldBeOpen])
+    if (!item.items) return
+    const shouldBeOpen = item.items.some(child => pathname === child.href) || 
+                        (item.href && pathname === item.href) ||
+                        (item.href && pathname.startsWith(item.href + '/'))
+    setIsOpen(shouldBeOpen)
+  }, [pathname, item.items, item.href])
 
   if (!hasItems && item.href) {
     return (
       <a
         href={item.href}
+        onClick={onItemClick}
         className={cn(
           "flex items-center gap-2 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-background-secondary",
           level > 0 ? "ml-4 text-foreground-secondary" : "text-foreground-secondary",
@@ -179,6 +182,7 @@ function SidebarSection({ item, level = 0, pathname }: { item: SidebarItem; leve
           {item.href ? (
             <a
               href={item.href}
+              onClick={onItemClick}
               className={cn(
                 "flex-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors hover:bg-background-secondary",
                 level === 0 ? "text-foreground" : "text-foreground-secondary",
@@ -201,7 +205,13 @@ function SidebarSection({ item, level = 0, pathname }: { item: SidebarItem; leve
       {isOpen && hasItems && (
         <div className={cn("space-y-1", level > 0 && "ml-4")}>
           {item.items?.map((subItem, index) => (
-            <SidebarSection key={index} item={subItem} level={level + 1} pathname={pathname} />
+            <MobileMenuSection 
+              key={index} 
+              item={subItem} 
+              level={level + 1} 
+              pathname={pathname} 
+              onItemClick={onItemClick}
+            />
           ))}
         </div>
       )}
@@ -209,26 +219,74 @@ function SidebarSection({ item, level = 0, pathname }: { item: SidebarItem; leve
   )
 }
 
-export function Sidebar() {
+interface MobileMenuProps {
+  isOpen: boolean
+  onClose: () => void
+}
+
+export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const pathname = usePathname()
-  
-  // Check if we're on an API reference page
   const isApiReference = pathname?.startsWith('/api-reference')
-  
-  // Use appropriate data based on current section
   const currentData = isApiReference ? apiReferenceData : guidesData
-  
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isOpen])
+
+  if (!isOpen) return null
+
   return (
-    <div className="fixed left-0 top-26 z-30 h-[calc(100vh-6.5rem)] w-64 border-r border-sidebar-border bg-sidebar-background hidden lg:block">
-      <div className="flex h-full flex-col">
-        <div className="flex-1 overflow-y-auto p-4">
-          <nav className="space-y-2">
-            {currentData.map((item: SidebarItem, index: number) => (
-              <SidebarSection key={index} item={item} pathname={pathname || ''} />
-            ))}
-          </nav>
+    <>
+      {/* Backdrop */}
+      <div 
+        className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+        onClick={onClose}
+      />
+      
+      {/* Menu Panel */}
+      <div className="fixed top-0 left-0 h-full w-80 max-w-[85vw] bg-sidebar-background border-r border-sidebar-border z-50 lg:hidden">
+        <div className="flex h-full flex-col">
+          {/* Header */}
+          <div className="flex items-center justify-between p-4 border-b border-sidebar-border">
+            <div className="flex items-center space-x-2">
+              <img 
+                src="/favicon.ico" 
+                alt="NEDApay Logo" 
+                className="h-6 w-6 rounded"
+              />
+              <span className="font-semibold">Navigation</span>
+            </div>
+            <button
+              onClick={onClose}
+              className="p-2 hover:bg-background-secondary rounded-lg transition-colors"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          </div>
+          
+          {/* Navigation */}
+          <div className="flex-1 overflow-y-auto p-4">
+            <nav className="space-y-2">
+              {currentData.map((item: SidebarItem, index: number) => (
+                <MobileMenuSection 
+                  key={index} 
+                  item={item} 
+                  pathname={pathname || ''} 
+                  onItemClick={onClose}
+                />
+              ))}
+            </nav>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }

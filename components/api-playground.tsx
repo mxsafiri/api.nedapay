@@ -109,7 +109,7 @@ export function ApiPlayground({
         )}
       </div>
 
-      <div className="flex">
+      <div className="flex flex-col lg:flex-row">
         {/* Left Panel - Request Configuration */}
         <div className="flex-1 p-4 space-y-6">
           {/* Authorization */}
@@ -155,7 +155,7 @@ export function ApiPlayground({
         </div>
 
         {/* Right Panel - Code & Response */}
-        <div className="w-1/2 border-l border-border">
+        <div className="w-full lg:w-1/2 border-t lg:border-t-0 lg:border-l border-border">
           {/* Tabs */}
           <div className="flex border-b border-border">
             <button
