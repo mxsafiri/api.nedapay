@@ -29,37 +29,37 @@ export function Header() {
           </button>
 
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 min-w-0 flex-shrink">
             <img 
               src="/favicon.ico" 
               alt="NEDApay Logo" 
-              className="h-8 w-8 rounded-lg"
+              className="h-8 w-8 rounded-lg flex-shrink-0"
             />
-            <span className="text-lg font-semibold">nedapay</span>
-            <span className="rounded-full bg-blue-500/10 px-2 py-1 text-xs text-blue-400 border border-blue-500/20">
+            <span className="text-lg font-semibold truncate">nedapay</span>
+            <span className="hidden sm:inline-flex rounded-full bg-blue-500/10 px-2 py-1 text-xs text-blue-400 border border-blue-500/20 flex-shrink-0">
               BETA
             </span>
           </div>
 
           {/* Search and Actions */}
-          <div className="flex flex-1 items-center justify-end space-x-4">
+          <div className="flex flex-1 items-center justify-end space-x-2 sm:space-x-4 ml-2 sm:ml-4">
             {/* Search */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="flex items-center space-x-2 rounded-lg border border-border bg-background-secondary px-3 py-2 text-sm text-foreground-secondary hover:bg-background-tertiary transition-colors"
+              className="flex items-center space-x-2 rounded-lg border border-border bg-background-secondary px-2 sm:px-3 py-2 text-sm text-foreground-secondary hover:bg-background-tertiary transition-colors"
             >
               <Search className="h-4 w-4" />
-              <span>Search...</span>
+              <span className="hidden sm:inline">Search...</span>
               <kbd className="pointer-events-none hidden sm:inline-flex h-5 select-none items-center gap-1 rounded border border-border bg-background px-1.5 font-mono text-xs text-foreground-muted">
                 ⌘K
               </kbd>
             </button>
 
             {/* External Links */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2 sm:space-x-4">
               <a
                 href="#"
-                className="text-sm text-foreground-secondary hover:text-foreground transition-colors"
+                className="hidden md:block text-sm text-foreground-secondary hover:text-foreground transition-colors"
               >
                 Support
               </a>
@@ -72,13 +72,13 @@ export function Header() {
               </a>
               <a
                 href="#"
-                className="text-sm text-foreground-secondary hover:text-foreground transition-colors"
+                className="hidden md:block text-sm text-foreground-secondary hover:text-foreground transition-colors"
               >
                 Community
               </a>
               
               {/* Theme Switch */}
-              <div className="border-l border-border pl-4">
+              <div className="border-l border-border pl-2 sm:pl-4">
                 <ThemeSwitch />
               </div>
             </div>
