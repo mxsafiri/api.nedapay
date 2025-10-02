@@ -11,7 +11,7 @@ A comprehensive documentation and developer portal for NEDApay - the decentraliz
 
 - **Interactive API Playground** - Test API endpoints directly in the browser
 - **Comprehensive Documentation** - Complete guides, tutorials, and reference materials
-- **Dark Theme Design** - Professional Paycrest-inspired aesthetic
+- **Dark Theme Design** - Professional dark theme aesthetic
 - **Mobile Responsive** - Optimized for all devices
 - **Fast Search** - Command palette with instant search (⌘K)
 - **Code Examples** - Multi-language code samples (JavaScript, Python, Go, PHP)
