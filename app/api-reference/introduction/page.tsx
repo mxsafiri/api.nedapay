@@ -6,47 +6,47 @@ export default function ApiIntroductionPage() {
       <div className="max-w-4xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">API Introduction</h1>
+          <h1 className="text-3xl font-bold mb-2">Partner API Introduction</h1>
           <p className="text-foreground-secondary">
-            Welcome to NEDApay's omni-channel payment infrastructure. Build global money movement solutions with our unified API.
+            Welcome to NEDApay's B2B infrastructure platform. Integrate stablecoin-to-fiat conversion capabilities into your existing payment services for your customers.
           </p>
         </div>
 
         {/* Overview */}
         <section className="mb-12">
           <p className="text-foreground-secondary mb-6 leading-relaxed">
-            The NEDApay API provides a comprehensive interface for integrating with our secondary layer infrastructure. 
-            Access stablecoin-to-fiat and fiat-to-stablecoin conversion through our global network of PSPs, MMOs, MNOs, 
-            and traditional financial institutions via a single, unified API.
+            The NEDApay Partner API enables PSPs, Banks, MNOs, and Fintech companies to offer stablecoin services to their customers 
+            through their existing channels. Our infrastructure handles blockchain complexity while you focus on customer experience 
+            through familiar interfaces like mobile money, banking apps, and payment platforms.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-6 rounded-lg border border-border bg-background-secondary">
               <Zap className="h-8 w-8 text-blue-400 mb-4" />
-              <h3 className="font-medium mb-2">Fast Integration</h3>
+              <h3 className="font-medium mb-2">Partner-First Design</h3>
               <p className="text-sm text-foreground-secondary">
-                Get started in minutes with our RESTful API and comprehensive SDKs
+                Built for PSPs, Banks, and MNOs to integrate stablecoin services seamlessly
               </p>
             </div>
             <div className="p-6 rounded-lg border border-border bg-background-secondary">
               <Globe className="h-8 w-8 text-green-400 mb-4" />
-              <h3 className="font-medium mb-2">Global Reach</h3>
+              <h3 className="font-medium mb-2">White-Label Ready</h3>
               <p className="text-sm text-foreground-secondary">
-                Access worldwide payment rails through a single integration
+                Offer stablecoin services under your brand through existing customer channels
               </p>
             </div>
             <div className="p-6 rounded-lg border border-border bg-background-secondary">
               <Shield className="h-8 w-8 text-orange-400 mb-4" />
-              <h3 className="font-medium mb-2">Enterprise Security</h3>
+              <h3 className="font-medium mb-2">Compliance Ready</h3>
               <p className="text-sm text-foreground-secondary">
-                Bank-grade security with blockchain settlement and compliance
+                Built-in KYC/AML integration and regulatory compliance for financial institutions
               </p>
             </div>
             <div className="p-6 rounded-lg border border-border bg-background-secondary">
               <Code className="h-8 w-8 text-purple-400 mb-4" />
-              <h3 className="font-medium mb-2">Developer Friendly</h3>
+              <h3 className="font-medium mb-2">Revenue Sharing</h3>
               <p className="text-sm text-foreground-secondary">
-                Intuitive APIs, detailed docs, and multi-language SDKs
+                Earn from every transaction with transparent fee structures and partner incentives
               </p>
             </div>
           </div>
@@ -80,29 +80,29 @@ export default function ApiIntroductionPage() {
 
         {/* API Capabilities */}
         <section className="mb-12">
-          <h2 className="text-2xl font-semibent mb-6">API Capabilities</h2>
+          <h2 className="text-2xl font-semibold mb-6">Partner API Capabilities</h2>
           <div className="space-y-6">
             
             {/* Core Payment Operations */}
             <div className="p-6 border border-border rounded-lg bg-background-secondary">
-              <h3 className="text-lg font-medium mb-4">Core Payment Operations</h3>
+              <h3 className="text-lg font-medium mb-4">Customer Transaction Management</h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="font-medium mb-3">Order Management</h4>
+                  <h4 className="font-medium mb-3">Customer Orders</h4>
                   <ul className="space-y-2 text-sm text-foreground-secondary">
-                    <li>• Create payment orders</li>
-                    <li>• Track order status</li>
-                    <li>• Retrieve order history</li>
-                    <li>• Cancel pending orders</li>
+                    <li>• Create orders for your customers</li>
+                    <li>• Track customer transaction status</li>
+                    <li>• Retrieve customer order history</li>
+                    <li>• Handle customer refunds/cancellations</li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-medium mb-3">Rate & Pricing</h4>
+                  <h4 className="font-medium mb-3">Partner Dashboard</h4>
                   <ul className="space-y-2 text-sm text-foreground-secondary">
-                    <li>• Get real-time exchange rates</li>
-                    <li>• Lock rates for transactions</li>
-                    <li>• Compare provider rates</li>
-                    <li>• Historical rate data</li>
+                    <li>• Real-time transaction analytics</li>
+                    <li>• Revenue and fee reporting</li>
+                    <li>• Customer transaction insights</li>
+                    <li>• Settlement reconciliation</li>
                   </ul>
                 </div>
               </div>
@@ -110,33 +110,33 @@ export default function ApiIntroductionPage() {
 
             {/* Provider Network */}
             <div className="p-6 border border-border rounded-lg bg-background-secondary">
-              <h3 className="text-lg font-medium mb-4">Provider Network Access</h3>
+              <h3 className="text-lg font-medium mb-4">Partner Integration Types</h3>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
-                  <h4 className="font-medium mb-3 text-blue-400">PSPs</h4>
+                  <h4 className="font-medium mb-3 text-blue-400">PSP Partners</h4>
                   <ul className="space-y-1 text-sm text-foreground-secondary">
-                    <li>• Card payments</li>
-                    <li>• Bank transfers</li>
-                    <li>• Digital wallets</li>
-                    <li>• ACH/SEPA</li>
+                    <li>• Offer stablecoin checkout</li>
+                    <li>• Cross-border settlements</li>
+                    <li>• Merchant stablecoin accounts</li>
+                    <li>• Instant fiat conversion</li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-medium mb-3 text-green-400">MMO/MNO</h4>
+                  <h4 className="font-medium mb-3 text-green-400">MNO Partners</h4>
                   <ul className="space-y-1 text-sm text-foreground-secondary">
-                    <li>• M-Pesa</li>
-                    <li>• Tigo Pesa</li>
-                    <li>• Airtel Money</li>
-                    <li>• MTN Mobile Money</li>
+                    <li>• Mobile money ↔ stablecoin</li>
+                    <li>• USSD stablecoin services</li>
+                    <li>• Remittance receiving</li>
+                    <li>• Agent network integration</li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-medium mb-3 text-orange-400">Banks</h4>
+                  <h4 className="font-medium mb-3 text-orange-400">Bank Partners</h4>
                   <ul className="space-y-1 text-sm text-foreground-secondary">
-                    <li>• Wire transfers</li>
-                    <li>• Real-time payments</li>
-                    <li>• Branch pickup</li>
-                    <li>• Account deposits</li>
+                    <li>• Stablecoin banking accounts</li>
+                    <li>• International wire alternatives</li>
+                    <li>• Corporate treasury services</li>
+                    <li>• Retail stablecoin products</li>
                   </ul>
                 </div>
               </div>
@@ -220,16 +220,12 @@ export default function ApiIntroductionPage() {
                   <code className="text-xs bg-code-background px-2 py-1 rounded">USDT</code>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-sm">TZS Stablecoin</span>
-                  <code className="text-xs bg-code-background px-2 py-1 rounded">TZSC</code>
+                  <span className="text-sm">cNGN (Nigerian Naira)</span>
+                  <code className="text-xs bg-code-background px-2 py-1 rounded">CNGN</code>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-sm">KES Stablecoin</span>
-                  <code className="text-xs bg-code-background px-2 py-1 rounded">KESC</code>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm">UGX Stablecoin</span>
-                  <code className="text-xs bg-code-background px-2 py-1 rounded">UGXC</code>
+                  <span className="text-sm">ZARP (South African Rand)</span>
+                  <code className="text-xs bg-code-background px-2 py-1 rounded">ZARP</code>
                 </div>
               </div>
             </div>
@@ -268,7 +264,7 @@ export default function ApiIntroductionPage() {
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-6">Quick Start Example</h2>
           <p className="text-foreground-secondary mb-6">
-            Here's a simple example of creating a payment order using our API:
+            Here's how a partner would create a stablecoin conversion order for their customer:
           </p>
 
           <div className="space-y-4">
@@ -280,19 +276,20 @@ export default function ApiIntroductionPage() {
 
             <div className="p-4 bg-code-background border border-code-border rounded-lg font-mono text-sm">
               <div className="text-foreground-secondary mb-2">2. Create Payment Order</div>
-              <pre className="text-blue-400">{`curl -X POST "https://api.nedapay.io/v1/orders" \\
-  -H "Authorization: Bearer your_api_key" \\
+              <pre className="text-blue-400">{`curl -X POST "https://api.nedapay.io/v1/partner/orders" \\
+  -H "Authorization: Bearer your_partner_api_key" \\
   -H "Content-Type: application/json" \\
   -d '{
+    "partner_id": "VODACOM_TZ",
+    "customer_id": "customer_12345",
     "rate_id": "rate_abc123",
     "amount": "100",
     "from_currency": "USDT",
     "to_currency": "TZS",
-    "recipient": {
-      "name": "John Doe",
-      "phone": "+255712345678",
-      "method": "mobile_money",
-      "provider": "mpesa"
+    "delivery_method": {
+      "type": "mobile_money",
+      "account": "+255712345678",
+      "name": "John Doe"
     }
   }'`}</pre>
             </div>
@@ -345,28 +342,28 @@ export default function ApiIntroductionPage() {
 
         {/* Rate Limits */}
         <section className="mb-12">
-          <h2 className="text-2xl font-semibent mb-6">Rate Limits</h2>
+          <h2 className="text-2xl font-semibold mb-6">Partner Rate Limits</h2>
           <div className="p-6 border border-border rounded-lg bg-background-secondary">
             <div className="grid md:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="text-2xl font-bold text-green-400 mb-1">1,000</div>
-                <div className="text-sm text-foreground-secondary">Sandbox</div>
+                <div className="text-sm text-foreground-secondary">Testing</div>
                 <div className="text-xs text-foreground-secondary">requests/hour</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-blue-400 mb-1">5,000</div>
-                <div className="text-sm text-foreground-secondary">Starter</div>
+                <div className="text-2xl font-bold text-blue-400 mb-1">10,000</div>
+                <div className="text-sm text-foreground-secondary">Regional Partner</div>
                 <div className="text-xs text-foreground-secondary">requests/hour</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-orange-400 mb-1">25,000</div>
-                <div className="text-sm text-foreground-secondary">Professional</div>
+                <div className="text-2xl font-bold text-orange-400 mb-1">50,000</div>
+                <div className="text-sm text-foreground-secondary">National Partner</div>
                 <div className="text-xs text-foreground-secondary">requests/hour</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-purple-400 mb-1">Custom</div>
-                <div className="text-sm text-foreground-secondary">Enterprise</div>
-                <div className="text-xs text-foreground-secondary">contact us</div>
+                <div className="text-2xl font-bold text-purple-400 mb-1">Unlimited</div>
+                <div className="text-sm text-foreground-secondary">Enterprise Partner</div>
+                <div className="text-xs text-foreground-secondary">dedicated infrastructure</div>
               </div>
             </div>
           </div>
@@ -409,7 +406,7 @@ export default function ApiIntroductionPage() {
           <div className="p-6 bg-blue-500/10 border border-blue-500/20 rounded-lg">
             <h3 className="text-lg font-medium mb-4">Need Help?</h3>
             <p className="text-foreground-secondary mb-4">
-              Our developer support team is here to help you integrate NEDApay into your application.
+              Our partner success team provides dedicated support for financial institutions integrating NEDApay infrastructure.
             </p>
             <div className="flex space-x-4">
               <a 

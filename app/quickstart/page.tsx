@@ -7,9 +7,9 @@ export default function QuickstartPage() {
       <div className="max-w-4xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">Quickstart</h1>
+          <h1 className="text-3xl font-bold mb-2">Partner Integration Quickstart</h1>
           <p className="text-foreground-secondary">
-            Get started with NEDApay in minutes - Learn how to create payment orders and integrate with the API
+            Get your financial institution integrated with NEDApay's stablecoin infrastructure in minutes
           </p>
         </div>
 
@@ -19,11 +19,11 @@ export default function QuickstartPage() {
           <div className="space-y-3">
             <div className="flex items-center space-x-3 p-3 border border-border rounded-lg">
               <CheckCircle className="h-5 w-5 text-green-400" />
-              <span>NEDApay account (sign up at <a href="#" className="text-blue-400 hover:underline">portal.nedapay.io</a>)</span>
+              <span>NEDApay partner account (apply at <a href="#" className="text-blue-400 hover:underline">partners.nedapay.io</a>)</span>
             </div>
             <div className="flex items-center space-x-3 p-3 border border-border rounded-lg">
               <CheckCircle className="h-5 w-5 text-green-400" />
-              <span>API key from your dashboard</span>
+              <span>Partner API credentials from your dashboard</span>
             </div>
             <div className="flex items-center space-x-3 p-3 border border-border rounded-lg">
               <CheckCircle className="h-5 w-5 text-green-400" />
@@ -34,7 +34,7 @@ export default function QuickstartPage() {
 
         {/* Create Your First Payment Order */}
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Create Your First Payment Order</h2>
+          <h2 className="text-2xl font-semibold mb-6">Create Your First Customer Order</h2>
           
           {/* Step 1: Get Exchange Rate */}
           <div className="mb-8">
@@ -44,7 +44,7 @@ export default function QuickstartPage() {
             </h3>
             
             <p className="text-foreground-secondary mb-4">
-              Before creating a payment order, get the current exchange rate for your desired currency pair.
+              Before creating a customer order, get the current exchange rate for the stablecoin-to-fiat conversion your customer needs.
             </p>
 
             <div className="grid md:grid-cols-4 gap-4 mb-6">
