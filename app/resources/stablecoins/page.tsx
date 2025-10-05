@@ -16,10 +16,18 @@ export default function StablecoinsPage() {
         {/* Overview */}
         <section className="mb-12">
           <p className="text-foreground-secondary mb-6 leading-relaxed">
-            NEDApay&apos;s partner infrastructure supports major stablecoins with Base as our primary network, complemented by Ethereum and Polygon. 
-            Partners can offer their customers stablecoin services through familiar channels like mobile money, banking apps, and payment platforms 
-            while NEDApay handles all blockchain complexity.
+            NEDApay&apos;s infrastructure leverages stablecoins as the settlement layer for fast, cost-effective cross-border transactions. 
+            Partners never need to handle stablecoins directly - we manage all blockchain operations while partners focus on 
+            delivering familiar fiat currency services to their customers.
           </p>
+          
+          <div className="p-4 bg-orange-500/10 border border-orange-500/20 rounded-lg mb-6">
+            <p className="text-sm text-orange-400 font-medium mb-1">Partner Focus</p>
+            <p className="text-sm text-foreground-secondary">
+              This page covers technical stablecoin details. For fiat currency delivery options, 
+              see <a href="/resources/currencies" className="text-blue-400 hover:underline">Supported Currencies</a>.
+            </p>
+          </div>
         </section>
 
         {/* Primary Stablecoins */}
@@ -54,18 +62,27 @@ export default function StablecoinsPage() {
               <div className="grid md:grid-cols-3 gap-6 mb-4">
                 <div>
                   <h4 className="font-medium mb-3">Network Support</h4>
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm">Ethereum</span>
-                      <code className="text-xs bg-code-background px-2 py-1 rounded">0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48</code>
+                  <div className="space-y-3">
+                    <div>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-sm font-medium">Ethereum</span>
+                        <span className="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">Live</span>
+                      </div>
+                      <code className="text-xs bg-code-background px-2 py-1 rounded block break-all">0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48</code>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm">Base</span>
-                      <code className="text-xs bg-code-background px-2 py-1 rounded">0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913</code>
+                    <div>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-sm font-medium">Base</span>
+                        <span className="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Primary</span>
+                      </div>
+                      <code className="text-xs bg-code-background px-2 py-1 rounded block break-all">0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913</code>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm">Polygon</span>
-                      <code className="text-xs bg-code-background px-2 py-1 rounded">0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359</code>
+                    <div>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-sm font-medium">Polygon</span>
+                        <span className="text-xs bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Live</span>
+                      </div>
+                      <code className="text-xs bg-code-background px-2 py-1 rounded block break-all">0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359</code>
                     </div>
                   </div>
                 </div>
@@ -128,18 +145,27 @@ export default function StablecoinsPage() {
               <div className="grid md:grid-cols-3 gap-6 mb-4">
                 <div>
                   <h4 className="font-medium mb-3">Network Support</h4>
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm">Ethereum</span>
-                      <code className="text-xs bg-code-background px-2 py-1 rounded">0xdAC17F958D2ee523a2206206994597C13D831ec7</code>
+                  <div className="space-y-3">
+                    <div>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-sm font-medium">Ethereum</span>
+                        <span className="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">Live</span>
+                      </div>
+                      <code className="text-xs bg-code-background px-2 py-1 rounded block break-all">0xdAC17F958D2ee523a2206206994597C13D831ec7</code>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm">Base</span>
-                      <code className="text-xs bg-code-background px-2 py-1 rounded">0xfde4C96c8593536E31F229EA11f403C6431e46fc</code>
+                    <div>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-sm font-medium">Base</span>
+                        <span className="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Primary</span>
+                      </div>
+                      <code className="text-xs bg-code-background px-2 py-1 rounded block break-all">0xfde4C96c8593536E31F229EA11f403C6431e46fc</code>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm">Polygon</span>
-                      <code className="text-xs bg-code-background px-2 py-1 rounded">0xc2132D05D31c914a87C6611C10748AEb04B58e8F</code>
+                    <div>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-sm font-medium">Polygon</span>
+                        <span className="text-xs bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Live</span>
+                      </div>
+                      <code className="text-xs bg-code-background px-2 py-1 rounded block break-all">0xc2132D05D31c914a87C6611C10748AEb04B58e8F</code>
                     </div>
                   </div>
                 </div>
@@ -181,7 +207,8 @@ export default function StablecoinsPage() {
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-6">Regional Stablecoins</h2>
           <p className="text-foreground-secondary mb-6">
-            Partners can offer regional stablecoins to their customers, providing direct local currency exposure for African markets through existing customer channels.
+            Regional stablecoins provide direct local currency exposure, eliminating USD conversion steps. 
+            These are particularly valuable for partners serving African markets with high USD volatility concerns.
           </p>
           
           <div className="space-y-6">
@@ -213,10 +240,15 @@ export default function StablecoinsPage() {
               <div className="grid md:grid-cols-3 gap-6 mb-4">
                 <div>
                   <h4 className="font-medium mb-3">Network Support</h4>
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm">Base</span>
-                      <code className="text-xs bg-code-background px-2 py-1 rounded">Available on Base</code>
+                  <div className="space-y-3">
+                    <div>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-sm font-medium">Base</span>
+                        <span className="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Native</span>
+                      </div>
+                      <div className="text-xs text-foreground-secondary">
+                        Contract address available on Base network
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -230,12 +262,12 @@ export default function StablecoinsPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-medium mb-3">Use Cases</h4>
+                  <h4 className="font-medium mb-3">Technical Benefits</h4>
                   <ul className="space-y-1 text-sm text-foreground-secondary">
-                    <li>• Nigerian customer payments</li>
-                    <li>• Diaspora remittances to Nigeria</li>
-                    <li>• Bank-to-stablecoin services</li>
-                    <li>• Mobile money integration</li>
+                    <li>• No USD conversion required</li>
+                    <li>• Reduced currency volatility</li>
+                    <li>• Direct NGN settlement</li>
+                    <li>• Lower partner operational costs</li>
                   </ul>
                 </div>
               </div>
@@ -268,10 +300,13 @@ export default function StablecoinsPage() {
               <div className="grid md:grid-cols-3 gap-6 mb-4">
                 <div>
                   <h4 className="font-medium mb-3">Network Support</h4>
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm">Base</span>
-                      <code className="text-xs bg-code-background px-2 py-1 rounded">0xb755506531786c8ac63b756bab1ac387bacb0c04</code>
+                  <div className="space-y-3">
+                    <div>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-sm font-medium">Base</span>
+                        <span className="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Native</span>
+                      </div>
+                      <code className="text-xs bg-code-background px-2 py-1 rounded block break-all">0xb755506531786c8ac63b756bab1ac387bacb0c04</code>
                     </div>
                   </div>
                 </div>
@@ -285,12 +320,12 @@ export default function StablecoinsPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-medium mb-3">Use Cases</h4>
+                  <h4 className="font-medium mb-3">Technical Benefits</h4>
                   <ul className="space-y-1 text-sm text-foreground-secondary">
-                    <li>• South African customer services</li>
-                    <li>• Regional trade settlements</li>
-                    <li>• Banking product integration</li>
-                    <li>• Corporate treasury solutions</li>
+                    <li>• Direct ZAR settlement</li>
+                    <li>• Institutional-grade reserves</li>
+                    <li>• Regulatory compliance built-in</li>
+                    <li>• Enterprise treasury integration</li>
                   </ul>
                 </div>
               </div>
@@ -333,7 +368,7 @@ export default function StablecoinsPage() {
                   <td className="p-4 text-sm">2-3 seconds</td>
                   <td className="p-4 text-sm">~$0.01</td>
                   <td className="p-4 text-sm">USDC, USDT, CNGN, ZARP</td>
-                  <td className="p-4 text-sm">EVM compatibility, low fees, DeFi</td>
+                  <td className="p-4 text-sm">Primary network, regional stablecoins</td>
                 </tr>
                 <tr className="border-b border-border">
                   <td className="p-4">
@@ -347,7 +382,7 @@ export default function StablecoinsPage() {
                   <td className="p-4 text-sm">2-3 seconds</td>
                   <td className="p-4 text-sm">~$0.001</td>
                   <td className="p-4 text-sm">USDC, USDT</td>
-                  <td className="p-4 text-sm">Ultra-low fees, high throughput</td>
+                  <td className="p-4 text-sm">Lowest fees, high-volume transactions</td>
                 </tr>
                 <tr>
                   <td className="p-4">
@@ -361,74 +396,36 @@ export default function StablecoinsPage() {
                   <td className="p-4 text-sm">12-15 seconds</td>
                   <td className="p-4 text-sm">$2-20</td>
                   <td className="p-4 text-sm">USDC, USDT</td>
-                  <td className="p-4 text-sm">Maximum liquidity, DeFi</td>
+                  <td className="p-4 text-sm">Maximum liquidity, established network</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </section>
 
-        {/* Integration Examples */}
+        {/* Cross-Reference */}
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Integration Examples</h2>
-          <div className="space-y-6">
-            
-            <div className="p-6 border border-border rounded-lg bg-background-secondary">
-              <h3 className="text-lg font-medium mb-4">Getting Stablecoin Rates</h3>
-              <div className="p-4 bg-code-background border border-code-border rounded-lg font-mono text-sm">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-foreground-secondary">GET /rates</span>
-                  <button className="text-foreground-secondary hover:text-foreground">
-                    <Copy className="h-4 w-4" />
-                  </button>
-                </div>
-                <pre className="text-green-400">{`curl -X GET "https://api.nedapay.io/v1/rates?from=USDC&to=NGN&amount=100" \\
-  -H "Authorization: Bearer your_api_key"
-
-# Response
-{
-  "rate": "1650.75",
-  "from_currency": "USDC",
-  "to_currency": "NGN",
-  "amount": "100",
-  "total": "165075.00",
-  "network": "base",
-  "expires_at": "2025-10-03T15:35:00Z"
-}`}</pre>
+          <div className="p-6 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+            <h3 className="text-lg font-medium mb-4">Related Resources</h3>
+            <p className="text-foreground-secondary mb-4">
+              For complete information about partner integration, explore these related resources:
+            </p>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div>
+                <h4 className="font-medium mb-2">Fiat Currency Delivery</h4>
+                <ul className="text-sm text-foreground-secondary space-y-1">
+                  <li>• <a href="/resources/currencies" className="text-blue-400 hover:underline">Supported Currencies</a> - Fiat delivery options</li>
+                  <li>• <a href="/api-reference/rates" className="text-blue-400 hover:underline">Rate APIs</a> - Exchange rate integration</li>
+                  <li>• <a href="/quickstart" className="text-blue-400 hover:underline">Partner Quickstart</a> - Integration guide</li>
+                </ul>
               </div>
-            </div>
-
-            <div className="p-6 border border-border rounded-lg bg-background-secondary">
-              <h3 className="text-lg font-medium mb-4">Multi-Network Rate Comparison</h3>
-              <div className="p-4 bg-code-background border border-code-border rounded-lg font-mono text-sm">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-foreground-secondary">GET /rates/compare</span>
-                  <button className="text-foreground-secondary hover:text-foreground">
-                    <Copy className="h-4 w-4" />
-                  </button>
-                </div>
-                <pre className="text-blue-400">{`curl -X GET "https://api.nedapay.io/v1/rates/compare?from=USDC&to=ZAR&amount=100" \\
-  -H "Authorization: Bearer your_api_key"
-
-# Response
-{
-  "rates": [
-    {
-      "network": "base",
-      "rate": "18.45",
-      "total": "1845.00",
-      "fee": "0.01",
-      "settlement_time": "3s"
-    },
-    {
-      "network": "polygon",
-      "rate": "18.42",
-      "total": "1842.00",
-      "fee": "0.001",
-      "settlement_time": "2s"
-    }
-  ]
-}`}</pre>
+              <div>
+                <h4 className="font-medium mb-2">Technical Integration</h4>
+                <ul className="text-sm text-foreground-secondary space-y-1">
+                  <li>• <a href="/api-reference/introduction" className="text-blue-400 hover:underline">API Documentation</a> - Complete API reference</li>
+                  <li>• <a href="/resources/errors" className="text-blue-400 hover:underline">Error Codes</a> - Troubleshooting guide</li>
+                  <li>• <a href="/concepts/architecture" className="text-blue-400 hover:underline">Architecture</a> - System overview</li>
+                </ul>
               </div>
             </div>
           </div>
