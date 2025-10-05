@@ -3,12 +3,13 @@
 import { ArrowRight, Zap, Shield, Globe, Code, Play, Building2, Clock, DollarSign } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import { InteractiveBankDemo } from '@/components/interactive-bank-demo'
 
 const animatedTexts = [
-  "90% faster international transfers.",
-  "80% lower costs than correspondent banking.",
+  "Pay anywhere, settle everywhere.",
+  "Stablecoins to fiat, instantly.",
   "One API, global reach.",
-  "Instant settlement, happy customers."
+  "Secondary layer for money movement."
 ]
 
 export default function HomePage() {
@@ -68,9 +69,9 @@ export default function HomePage() {
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-foreground-secondary mb-12 max-w-3xl mx-auto leading-relaxed">
-            The next-generation <span className="text-blue-400 font-semibold">international transfer infrastructure</span> that 
-            replaces slow correspondent banking with <span className="text-green-400 font-semibold">instant blockchain settlement</span> — 
-            while your customers only see <span className="text-orange-400 font-semibold">familiar fiat currencies</span>.
+            The omni-channel protocol creating a <span className="text-blue-400 font-semibold">secondary layer</span> for 
+            global money movement through <span className="text-green-400 font-semibold">stablecoins</span> and 
+            <span className="text-orange-400 font-semibold"> local payment rails</span>.
           </p>
 
           {/* CTA Buttons */}
@@ -124,102 +125,7 @@ export default function HomePage() {
       <div className="container mx-auto px-6 py-12">
         <div className="max-w-4xl">
 
-        {/* For Banks Section */}
-        <section className="mb-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 flex items-center justify-center">
-              <Building2 className="h-8 w-8 text-blue-400 mr-3" />
-              Built for Financial Institutions
-            </h2>
-            <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
-              Offer your customers instant international transfers while reducing your operational costs by 80%
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="text-center p-6 rounded-lg border border-border bg-background-secondary">
-              <Clock className="h-12 w-12 text-green-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-3">Minutes, Not Days</h3>
-              <p className="text-foreground-secondary mb-4">
-                Replace 2-5 day correspondent banking with 2-5 minute blockchain settlement
-              </p>
-              <div className="text-sm text-green-400 font-medium">
-                Traditional: 2-5 days → NEDApay: 2-5 minutes
-              </div>
-            </div>
-
-            <div className="text-center p-6 rounded-lg border border-border bg-background-secondary">
-              <DollarSign className="h-12 w-12 text-blue-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-3">Massive Cost Savings</h3>
-              <p className="text-foreground-secondary mb-4">
-                Eliminate correspondent banking fees, reduce operational overhead
-              </p>
-              <div className="text-sm text-blue-400 font-medium">
-                Traditional: $25-50 → NEDApay: $2-5
-              </div>
-            </div>
-
-            <div className="text-center p-6 rounded-lg border border-border bg-background-secondary">
-              <Shield className="h-12 w-12 text-orange-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-3">Zero Crypto Complexity</h3>
-              <p className="text-foreground-secondary mb-4">
-                Your customers send and receive familiar fiat currencies
-              </p>
-              <div className="text-sm text-orange-400 font-medium">
-                USD → KES, EUR → TZS, GBP → UGX
-              </div>
-            </div>
-          </div>
-
-          {/* Bank Integration Example */}
-          <div className="p-8 rounded-lg border border-blue-500/20 bg-gradient-to-r from-blue-500/5 to-green-500/5">
-            <h3 className="text-xl font-semibold mb-6 text-center">Simple Bank Integration</h3>
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h4 className="font-medium mb-4 text-blue-400">What Your Customers See</h4>
-                <div className="space-y-3 text-sm">
-                  <div className="flex justify-between p-3 bg-background-secondary rounded">
-                    <span>Send Amount:</span>
-                    <span className="font-medium">$1,000 USD</span>
-                  </div>
-                  <div className="flex justify-between p-3 bg-background-secondary rounded">
-                    <span>Recipient Gets:</span>
-                    <span className="font-medium">KES 135,000</span>
-                  </div>
-                  <div className="flex justify-between p-3 bg-background-secondary rounded">
-                    <span>Transfer Time:</span>
-                    <span className="font-medium text-green-400">2-5 minutes</span>
-                  </div>
-                  <div className="flex justify-between p-3 bg-background-secondary rounded">
-                    <span>Total Fee:</span>
-                    <span className="font-medium">$3.50</span>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h4 className="font-medium mb-4 text-green-400">What You Get</h4>
-                <ul className="space-y-3 text-sm text-foreground-secondary">
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-green-400 rounded-full mr-3"></div>
-                    Happy customers (faster transfers)
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full mr-3"></div>
-                    Higher margins (lower costs)
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-orange-400 rounded-full mr-3"></div>
-                    Competitive advantage
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
-                    Simple API integration
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
+        <InteractiveBankDemo />
 
         {/* How NEDApay Works */}
         <section className="mb-12">
