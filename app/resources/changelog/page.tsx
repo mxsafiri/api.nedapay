@@ -149,15 +149,14 @@ export default function ChangelogPage() {
                 </ul>
               </div>
 
-              {/* Migration Guide */}
+              {/* Migration Support */}
               <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
-                <h4 className="font-medium text-blue-400 mb-2">Migration Guide</h4>
+                <h4 className="font-medium text-blue-400 mb-2">Migration Support</h4>
                 <p className="text-sm text-foreground-secondary mb-2">
-                  Detailed migration instructions and code examples are available in our 
-                  <a href="/guides/v2-migration" className="text-blue-400 hover:underline ml-1">V2 Migration Guide</a>.
+                  For assistance with API version updates and breaking changes, our partner success team provides dedicated migration support.
                 </p>
                 <p className="text-sm text-foreground-secondary">
-                  Need help? Contact our partner success team at <code>migration@nedapay.io</code>
+                  Need help? Contact our partner success team at <code>info@nedapay.xyz</code>
                 </p>
               </div>
             </div>
@@ -343,10 +342,10 @@ export default function ChangelogPage() {
               <div>
                 <h4 className="font-medium mb-2">Resources</h4>
                 <ul className="text-sm text-foreground-secondary space-y-1">
-                  <li>• <a href="/guides/migration" className="text-blue-400 hover:underline">Migration guides</a></li>
                   <li>• <a href="/api-reference" className="text-blue-400 hover:underline">Updated API documentation</a></li>
-                  <li>• <a href="/support" className="text-blue-400 hover:underline">Partner support portal</a></li>
-                  <li>• <a href="/status" className="text-blue-400 hover:underline">System status page</a></li>
+                  <li>• <a href="/resources/errors" className="text-blue-400 hover:underline">Error handling guide</a></li>
+                  <li>• Email: info@nedapay.xyz for support</li>
+                  <li>• This changelog for version updates</li>
                 </ul>
               </div>
             </div>

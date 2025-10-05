@@ -528,7 +528,7 @@ try {
               <div>
                 <h4 className="font-medium mb-2">Contact Support</h4>
                 <ul className="text-sm text-foreground-secondary space-y-1">
-                  <li>• Email: partners@nedapay.io</li>
+                  <li>• Email: info@nedapay.xyz</li>
                   <li>• Slack: #partner-support</li>
                   <li>• Phone: +1-555-NEDAPAY</li>
                 </ul>

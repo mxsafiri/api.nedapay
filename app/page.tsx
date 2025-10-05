@@ -1,14 +1,14 @@
 'use client'
 
-import { ArrowRight, Zap, Shield, Globe, Code, Play } from 'lucide-react'
+import { ArrowRight, Zap, Shield, Globe, Code, Play, Building2, Clock, DollarSign } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 const animatedTexts = [
-  "Pay anywhere, settle everywhere.",
-  "Stablecoins to fiat, instantly.",
+  "90% faster international transfers.",
+  "80% lower costs than correspondent banking.",
   "One API, global reach.",
-  "Secondary layer for money movement."
+  "Instant settlement, happy customers."
 ]
 
 export default function HomePage() {
@@ -68,9 +68,9 @@ export default function HomePage() {
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-foreground-secondary mb-12 max-w-3xl mx-auto leading-relaxed">
-            The omni-channel protocol creating a <span className="text-blue-400 font-semibold">secondary layer</span> for 
-            global money movement through <span className="text-green-400 font-semibold">stablecoins</span> and 
-            <span className="text-orange-400 font-semibold"> local payment rails</span>.
+            The next-generation <span className="text-blue-400 font-semibold">international transfer infrastructure</span> that 
+            replaces slow correspondent banking with <span className="text-green-400 font-semibold">instant blockchain settlement</span> — 
+            while your customers only see <span className="text-orange-400 font-semibold">familiar fiat currencies</span>.
           </p>
 
           {/* CTA Buttons */}
@@ -94,20 +94,20 @@ export default function HomePage() {
           {/* Quick Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-2xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-400 mb-2">3s</div>
-              <div className="text-sm text-foreground-secondary">Settlement Time</div>
+              <div className="text-3xl font-bold text-blue-400 mb-2">2-5min</div>
+              <div className="text-sm text-foreground-secondary">Transfer Time</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-400 mb-2">50+</div>
-              <div className="text-sm text-foreground-secondary">Payment Rails</div>
+              <div className="text-3xl font-bold text-green-400 mb-2">80%</div>
+              <div className="text-sm text-foreground-secondary">Cost Savings</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-orange-400 mb-2">6</div>
-              <div className="text-sm text-foreground-secondary">Currencies</div>
+              <div className="text-3xl font-bold text-orange-400 mb-2">50+</div>
+              <div className="text-sm text-foreground-secondary">Countries</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-purple-400 mb-2">99.9%</div>
-              <div className="text-sm text-foreground-secondary">Uptime</div>
+              <div className="text-sm text-foreground-secondary">Success Rate</div>
             </div>
           </div>
         </div>
@@ -124,53 +124,150 @@ export default function HomePage() {
       <div className="container mx-auto px-6 py-12">
         <div className="max-w-4xl">
 
-        {/* Welcome Section */}
+        {/* For Banks Section */}
+        <section className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4 flex items-center justify-center">
+              <Building2 className="h-8 w-8 text-blue-400 mr-3" />
+              Built for Financial Institutions
+            </h2>
+            <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
+              Offer your customers instant international transfers while reducing your operational costs by 80%
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="text-center p-6 rounded-lg border border-border bg-background-secondary">
+              <Clock className="h-12 w-12 text-green-400 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-3">Minutes, Not Days</h3>
+              <p className="text-foreground-secondary mb-4">
+                Replace 2-5 day correspondent banking with 2-5 minute blockchain settlement
+              </p>
+              <div className="text-sm text-green-400 font-medium">
+                Traditional: 2-5 days → NEDApay: 2-5 minutes
+              </div>
+            </div>
+
+            <div className="text-center p-6 rounded-lg border border-border bg-background-secondary">
+              <DollarSign className="h-12 w-12 text-blue-400 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-3">Massive Cost Savings</h3>
+              <p className="text-foreground-secondary mb-4">
+                Eliminate correspondent banking fees, reduce operational overhead
+              </p>
+              <div className="text-sm text-blue-400 font-medium">
+                Traditional: $25-50 → NEDApay: $2-5
+              </div>
+            </div>
+
+            <div className="text-center p-6 rounded-lg border border-border bg-background-secondary">
+              <Shield className="h-12 w-12 text-orange-400 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-3">Zero Crypto Complexity</h3>
+              <p className="text-foreground-secondary mb-4">
+                Your customers send and receive familiar fiat currencies
+              </p>
+              <div className="text-sm text-orange-400 font-medium">
+                USD → KES, EUR → TZS, GBP → UGX
+              </div>
+            </div>
+          </div>
+
+          {/* Bank Integration Example */}
+          <div className="p-8 rounded-lg border border-blue-500/20 bg-gradient-to-r from-blue-500/5 to-green-500/5">
+            <h3 className="text-xl font-semibold mb-6 text-center">Simple Bank Integration</h3>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h4 className="font-medium mb-4 text-blue-400">What Your Customers See</h4>
+                <div className="space-y-3 text-sm">
+                  <div className="flex justify-between p-3 bg-background-secondary rounded">
+                    <span>Send Amount:</span>
+                    <span className="font-medium">$1,000 USD</span>
+                  </div>
+                  <div className="flex justify-between p-3 bg-background-secondary rounded">
+                    <span>Recipient Gets:</span>
+                    <span className="font-medium">KES 135,000</span>
+                  </div>
+                  <div className="flex justify-between p-3 bg-background-secondary rounded">
+                    <span>Transfer Time:</span>
+                    <span className="font-medium text-green-400">2-5 minutes</span>
+                  </div>
+                  <div className="flex justify-between p-3 bg-background-secondary rounded">
+                    <span>Total Fee:</span>
+                    <span className="font-medium">$3.50</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h4 className="font-medium mb-4 text-green-400">What You Get</h4>
+                <ul className="space-y-3 text-sm text-foreground-secondary">
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mr-3"></div>
+                    Happy customers (faster transfers)
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full mr-3"></div>
+                    Higher margins (lower costs)
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-orange-400 rounded-full mr-3"></div>
+                    Competitive advantage
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
+                    Simple API integration
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* How NEDApay Works */}
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Welcome to NEDApay</h2>
+          <h2 className="text-2xl font-semibold mb-6">How NEDApay Works</h2>
           <p className="text-foreground-secondary mb-6 leading-relaxed">
-            We provide <strong className="text-foreground">blockchain infrastructure</strong> that enables Payment Service Providers (PSPs), 
-            Mobile Network Operators (MNOs), and Banks to offer <strong className="text-foreground">stablecoin services</strong> through 
-            their existing customer channels. Your customers use familiar interfaces while you leverage our Base network bridge for 
-            <strong className="text-foreground"> instant stablecoin-to-fiat conversion</strong>.
+            We provide <strong className="text-foreground">next-generation settlement infrastructure</strong> that enables Banks, 
+            Payment Service Providers (PSPs), and Mobile Network Operators (MNOs) to offer <strong className="text-foreground">instant international transfers</strong> through 
+            their existing customer channels. Your customers use familiar interfaces while you leverage our blockchain-powered settlement network for 
+            <strong className="text-foreground"> 80% cost reduction and 99% faster processing</strong>.
           </p>
           <div className="p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
             <p className="text-sm text-blue-400">
-              <strong>Partner-First Approach:</strong> Keep your existing payment infrastructure, customer relationships, and compliance frameworks. 
-              We handle the blockchain complexity so you can focus on serving your customers.
+              <strong>Partner-First Approach:</strong> Keep your existing customer relationships, compliance frameworks, and user interfaces. 
+              We handle the complex settlement infrastructure so you can focus on serving your customers better.
             </p>
           </div>
         </section>
 
-        {/* The Solution */}
+        {/* The Technology */}
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">The Solution</h2>
+          <h2 className="text-2xl font-semibold mb-6">The Technology</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-6 rounded-lg border border-border bg-background-secondary">
               <Zap className="h-8 w-8 text-blue-400 mb-4" />
-              <h3 className="font-medium mb-2">Secondary Layer</h3>
+              <h3 className="font-medium mb-2">Blockchain Settlement</h3>
               <p className="text-sm text-foreground-secondary">
-                Unified routing layer connecting stablecoins to global payment rails
+                Replace correspondent banking with instant blockchain settlement
               </p>
             </div>
             <div className="p-6 rounded-lg border border-border bg-background-secondary">
               <Shield className="h-8 w-8 text-green-400 mb-4" />
-              <h3 className="font-medium mb-2">Omni-Channel</h3>
+              <h3 className="font-medium mb-2">Global Network</h3>
               <p className="text-sm text-foreground-secondary">
-                Single protocol accessing PSPs, MMOs, MNOs, and traditional banking
+                Access to 50+ countries through local payment providers
               </p>
             </div>
             <div className="p-6 rounded-lg border border-border bg-background-secondary">
               <Globe className="h-8 w-8 text-orange-400 mb-4" />
-              <h3 className="font-medium mb-2">Global Distribution</h3>
+              <h3 className="font-medium mb-2">Fiat-to-Fiat</h3>
               <p className="text-sm text-foreground-secondary">
-                Instant stablecoin-to-fiat conversion across worldwide networks
+                Customers send and receive familiar currencies, no crypto knowledge needed
               </p>
             </div>
             <div className="p-6 rounded-lg border border-border bg-background-secondary">
               <Code className="h-8 w-8 text-purple-400 mb-4" />
-              <h3 className="font-medium mb-2">Unified API</h3>
+              <h3 className="font-medium mb-2">Simple Integration</h3>
               <p className="text-sm text-foreground-secondary">
-                Single integration point for accessing global money movement infrastructure
+                RESTful APIs that integrate with existing banking systems
               </p>
             </div>
           </div>
@@ -232,10 +329,10 @@ export default function HomePage() {
               className="group p-6 rounded-lg border border-border bg-background-secondary hover:bg-background-tertiary transition-colors"
             >
               <h3 className="font-medium mb-2 group-hover:text-blue-400 transition-colors">
-                For Developers
+                For Banks & PSPs
               </h3>
               <p className="text-sm text-foreground-secondary mb-4">
-                Learn how to create payment orders and integrate with the NEDApay API
+                Learn how to integrate instant international transfers into your platform
               </p>
               <div className="flex items-center text-blue-400 text-sm font-medium">
                 Get Started <ArrowRight className="ml-2 h-4 w-4" />
@@ -246,10 +343,10 @@ export default function HomePage() {
               className="group p-6 rounded-lg border border-border bg-background-secondary hover:bg-background-tertiary transition-colors"
             >
               <h3 className="font-medium mb-2 group-hover:text-green-400 transition-colors">
-                For Providers
+                For Payment Providers
               </h3>
               <p className="text-sm text-foreground-secondary mb-4">
-                Set up a provider node to supply liquidity and earn fees
+                Join our network to provide local payment delivery and earn fees
               </p>
               <div className="flex items-center text-green-400 text-sm font-medium">
                 Setup Guide <ArrowRight className="ml-2 h-4 w-4" />

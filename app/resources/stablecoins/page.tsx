@@ -155,17 +155,14 @@ export default function StablecoinsPage() {
                     </div>
                     <div>
                       <div className="flex items-center justify-between mb-1">
-                        <span className="text-sm font-medium">Base</span>
-                        <span className="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Primary</span>
-                      </div>
-                      <code className="text-xs bg-code-background px-2 py-1 rounded block break-all">0xfde4C96c8593536E31F229EA11f403C6431e46fc</code>
-                    </div>
-                    <div>
-                      <div className="flex items-center justify-between mb-1">
                         <span className="text-sm font-medium">Polygon</span>
                         <span className="text-xs bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Live</span>
                       </div>
                       <code className="text-xs bg-code-background px-2 py-1 rounded block break-all">0xc2132D05D31c914a87C6611C10748AEb04B58e8F</code>
+                    </div>
+                    <div className="p-3 bg-orange-500/10 border border-orange-500/20 rounded-lg">
+                      <p className="text-xs text-orange-400 font-medium mb-1">Base Network</p>
+                      <p className="text-xs text-foreground-secondary">USDT is not currently available on Base network</p>
                     </div>
                   </div>
                 </div>
@@ -367,7 +364,7 @@ export default function StablecoinsPage() {
                   </td>
                   <td className="p-4 text-sm">2-3 seconds</td>
                   <td className="p-4 text-sm">~$0.01</td>
-                  <td className="p-4 text-sm">USDC, USDT, CNGN, ZARP</td>
+                  <td className="p-4 text-sm">USDC, CNGN, ZARP</td>
                   <td className="p-4 text-sm">Primary network, regional stablecoins</td>
                 </tr>
                 <tr className="border-b border-border">
