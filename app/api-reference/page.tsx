@@ -44,6 +44,9 @@ export default function ApiReferencePage() {
           <div className="p-4 bg-code-background border border-code-border rounded-lg font-mono text-sm">
             https://api.nedapay.io/v1
           </div>
+          <p className="text-foreground-secondary text-sm mt-2">
+            <strong>Note:</strong> This API is currently in development. Only provider application endpoints are functional.
+          </p>
         </section>
 
         {/* Authentication */}
@@ -55,7 +58,7 @@ export default function ApiReferencePage() {
             All API requests require authentication using an API key. You can obtain your API key by:
           </p>
           <ol className="list-decimal list-inside space-y-2 text-foreground-secondary mb-6">
-            <li>Signing up for a NEDApay account at <a href="#" className="text-blue-400 hover:underline">portal.nedapay.io</a></li>
+            <li>Signing up for a NEDApay account at <a href="https://portal.nedapay.xyz/" className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">portal.nedapay.xyz</a></li>
             <li>Navigating to the API Keys section in your dashboard</li>
             <li>Generating a new API key for your application</li>
           </ol>
@@ -71,133 +74,153 @@ export default function ApiReferencePage() {
           </div>
         </section>
 
+        {/* Implementation Status */}
+        <section className="mb-12">
+          <div className="p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg mb-6">
+            <h3 className="font-semibold text-yellow-400 mb-2">🚧 Development Status</h3>
+            <p className="text-sm text-yellow-300">
+              NEDApay API is currently in active development. Only provider application endpoints are functional. 
+              Core payment processing APIs are being built based on our aggregator node architecture.
+            </p>
+          </div>
+        </section>
+
         {/* API Endpoints */}
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-6">API Endpoints</h2>
           
-          {/* Sender Endpoints */}
+          {/* Currently Available */}
           <div className="mb-8">
             <h3 className="text-lg font-medium mb-4 flex items-center">
-              <Code className="h-5 w-5 mr-2 text-blue-400" />
-              Sender Endpoints
+              <Shield className="h-5 w-5 mr-2 text-green-400" />
+              Currently Available
             </h3>
             <div className="space-y-3">
-              <a 
-                href="/api-reference/sender/create-order"
-                className="group flex items-center justify-between p-4 border border-border rounded-lg hover:bg-background-secondary transition-colors"
-              >
+              <div className="group flex items-center justify-between p-4 border border-green-500/20 bg-green-500/5 rounded-lg">
                 <div className="flex items-center space-x-3">
                   <span className="method-badge method-post">POST</span>
                   <div>
-                    <div className="font-medium group-hover:text-blue-400 transition-colors">
-                      Initiate Payment Order
+                    <div className="font-medium text-green-400">
+                      Submit Provider Application
                     </div>
                     <div className="text-sm text-foreground-secondary">
-                      Create a new payment order for processing
+                      Apply to become a payment provider in the NEDApay network
+                    </div>
+                    <div className="text-xs text-green-400 mt-1">
+                      /v1/providers/apply
                     </div>
                   </div>
                 </div>
-                <ArrowRight className="h-4 w-4 text-foreground-muted group-hover:text-blue-400 transition-colors" />
-              </a>
-
-              <a 
-                href="/api-reference/sender/list-orders"
-                className="group flex items-center justify-between p-4 border border-border rounded-lg hover:bg-background-secondary transition-colors"
-              >
-                <div className="flex items-center space-x-3">
-                  <span className="method-badge method-get">GET</span>
-                  <div>
-                    <div className="font-medium group-hover:text-blue-400 transition-colors">
-                      List Payment Orders
-                    </div>
-                    <div className="text-sm text-foreground-secondary">
-                      Retrieve all payment orders for your account
-                    </div>
-                  </div>
-                </div>
-                <ArrowRight className="h-4 w-4 text-foreground-muted group-hover:text-blue-400 transition-colors" />
-              </a>
-
-              <a 
-                href="/api-reference/sender/get-order"
-                className="group flex items-center justify-between p-4 border border-border rounded-lg hover:bg-background-secondary transition-colors"
-              >
-                <div className="flex items-center space-x-3">
-                  <span className="method-badge method-get">GET</span>
-                  <div>
-                    <div className="font-medium group-hover:text-blue-400 transition-colors">
-                      Get Payment Order by ID
-                    </div>
-                    <div className="text-sm text-foreground-secondary">
-                      Retrieve detailed information about a specific order
-                    </div>
-                  </div>
-                </div>
-                <ArrowRight className="h-4 w-4 text-foreground-muted group-hover:text-blue-400 transition-colors" />
-              </a>
+                <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded">LIVE</span>
+              </div>
             </div>
           </div>
 
-          {/* Receiver Endpoints */}
+          {/* Coming Soon - Core Payment APIs */}
           <div className="mb-8">
             <h3 className="text-lg font-medium mb-4 flex items-center">
-              <ArrowRight className="h-5 w-5 mr-2 text-purple-400" />
-              Receiver Endpoints (On-ramp)
+              <Code className="h-5 w-5 mr-2 text-blue-400" />
+              Core Payment APIs (In Development)
             </h3>
             <div className="space-y-3">
-              <a 
-                href="/api-reference/receiver/create-order"
-                className="group flex items-center justify-between p-4 border border-border rounded-lg hover:bg-background-secondary transition-colors"
-              >
+              <div className="group flex items-center justify-between p-4 border border-border rounded-lg opacity-60">
                 <div className="flex items-center space-x-3">
                   <span className="method-badge method-post">POST</span>
                   <div>
-                    <div className="font-medium group-hover:text-purple-400 transition-colors">
-                      Create On-ramp Order
+                    <div className="font-medium">
+                      Create Payment Order
                     </div>
                     <div className="text-sm text-foreground-secondary">
-                      Create a new fiat-to-stablecoin conversion order
+                      Initiate stablecoin-to-fiat conversion through aggregator network
+                    </div>
+                    <div className="text-xs text-blue-400 mt-1">
+                      /v1/orders
                     </div>
                   </div>
                 </div>
-                <ArrowRight className="h-4 w-4 text-foreground-muted group-hover:text-purple-400 transition-colors" />
-              </a>
+                <span className="px-2 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded">PLANNED</span>
+              </div>
 
-              <a 
-                href="/api-reference/receiver/get-order"
-                className="group flex items-center justify-between p-4 border border-border rounded-lg hover:bg-background-secondary transition-colors"
-              >
+              <div className="group flex items-center justify-between p-4 border border-border rounded-lg opacity-60">
                 <div className="flex items-center space-x-3">
                   <span className="method-badge method-get">GET</span>
                   <div>
-                    <div className="font-medium group-hover:text-purple-400 transition-colors">
-                      Get On-ramp Order
+                    <div className="font-medium">
+                      Get Payment Rates
                     </div>
                     <div className="text-sm text-foreground-secondary">
-                      Retrieve status and details of an on-ramp order
+                      Retrieve current exchange rates from provider network
+                    </div>
+                    <div className="text-xs text-blue-400 mt-1">
+                      /v1/rates
                     </div>
                   </div>
                 </div>
-                <ArrowRight className="h-4 w-4 text-foreground-muted group-hover:text-purple-400 transition-colors" />
-              </a>
+                <span className="px-2 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded">PLANNED</span>
+              </div>
 
-              <a 
-                href="/api-reference/receiver/list-orders"
-                className="group flex items-center justify-between p-4 border border-border rounded-lg hover:bg-background-secondary transition-colors"
-              >
+              <div className="group flex items-center justify-between p-4 border border-border rounded-lg opacity-60">
+                <div className="flex items-center space-x-3">
+                  <span className="method-badge method-post">POST</span>
+                  <div>
+                    <div className="font-medium">
+                      Request Quote
+                    </div>
+                    <div className="text-sm text-foreground-secondary">
+                      Get optimal route and pricing for payment order
+                    </div>
+                    <div className="text-xs text-blue-400 mt-1">
+                      /v1/quotes
+                    </div>
+                  </div>
+                </div>
+                <span className="px-2 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded">PLANNED</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Aggregator Intelligence APIs */}
+          <div className="mb-8">
+            <h3 className="text-lg font-medium mb-4 flex items-center">
+              <Zap className="h-5 w-5 mr-2 text-purple-400" />
+              Aggregator Intelligence (Future)
+            </h3>
+            <div className="space-y-3">
+              <div className="group flex items-center justify-between p-4 border border-border rounded-lg opacity-60">
+                <div className="flex items-center space-x-3">
+                  <span className="method-badge method-post">POST</span>
+                  <div>
+                    <div className="font-medium">
+                      Optimize Route
+                    </div>
+                    <div className="text-sm text-foreground-secondary">
+                      Get ML-optimized payment routing through provider network
+                    </div>
+                    <div className="text-xs text-purple-400 mt-1">
+                      /v1/routes/optimize
+                    </div>
+                  </div>
+                </div>
+                <span className="px-2 py-1 bg-gray-500/20 text-gray-400 text-xs rounded">ROADMAP</span>
+              </div>
+
+              <div className="group flex items-center justify-between p-4 border border-border rounded-lg opacity-60">
                 <div className="flex items-center space-x-3">
                   <span className="method-badge method-get">GET</span>
                   <div>
-                    <div className="font-medium group-hover:text-purple-400 transition-colors">
-                      List On-ramp Orders
+                    <div className="font-medium">
+                      Provider Network Status
                     </div>
                     <div className="text-sm text-foreground-secondary">
-                      Retrieve all on-ramp orders for your account
+                      Real-time liquidity and performance metrics across providers
+                    </div>
+                    <div className="text-xs text-purple-400 mt-1">
+                      /v1/network/status
                     </div>
                   </div>
                 </div>
-                <ArrowRight className="h-4 w-4 text-foreground-muted group-hover:text-purple-400 transition-colors" />
-              </a>
+                <span className="px-2 py-1 bg-gray-500/20 text-gray-400 text-xs rounded">ROADMAP</span>
+              </div>
             </div>
           </div>
 
@@ -377,15 +400,76 @@ export default function ApiReferencePage() {
           </div>
         </section>
 
-        {/* Webhooks */}
+        {/* Implementation Roadmap */}
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Webhooks</h2>
-          <p className="text-foreground-secondary mb-4">
-            NEDApay can send webhook notifications to your application when payment order statuses change.
+          <h2 className="text-2xl font-semibold mb-6">Implementation Roadmap</h2>
+          <div className="space-y-4">
+            <div className="flex items-center space-x-4 p-4 border border-green-500/20 bg-green-500/5 rounded-lg">
+              <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+              <div>
+                <div className="font-medium text-green-400">Phase 1: Provider Onboarding (Current)</div>
+                <div className="text-sm text-foreground-secondary">Application submission and KYC process</div>
+              </div>
+            </div>
+            
+            <div className="flex items-center space-x-4 p-4 border border-yellow-500/20 bg-yellow-500/5 rounded-lg">
+              <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+              <div>
+                <div className="font-medium text-yellow-400">Phase 2: Core Payment APIs (Q1 2024)</div>
+                <div className="text-sm text-foreground-secondary">Order creation, rates, quotes, and basic settlement</div>
+              </div>
+            </div>
+            
+            <div className="flex items-center space-x-4 p-4 border border-border rounded-lg opacity-60">
+              <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
+              <div>
+                <div className="font-medium">Phase 3: Aggregator Intelligence (Q2 2024)</div>
+                <div className="text-sm text-foreground-secondary">ML-powered routing, real-time optimization, advanced analytics</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Provider Network */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-6">Provider Network</h2>
+          <p className="text-foreground-secondary mb-6">
+            NEDApay operates an open aggregator network where qualified payment providers can join to offer services:
           </p>
           
-          <h3 className="text-lg font-medium mb-3">Example</h3>
-          <div className="p-4 bg-code-background border border-code-border rounded-lg font-mono text-sm">
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="p-4 border border-border rounded-lg">
+              <h4 className="font-medium mb-2">Provider Types</h4>
+              <p className="text-sm text-foreground-secondary mb-2">
+                Mobile money operators, banks, PSPs, and fintech companies can apply to join
+              </p>
+              <span className="text-xs text-blue-400">KYC verification required</span>
+            </div>
+            
+            <div className="p-4 border border-border rounded-lg">
+              <h4 className="font-medium mb-2">Network Benefits</h4>
+              <p className="text-sm text-foreground-secondary mb-2">
+                Access to stablecoin liquidity pools and cross-border settlement infrastructure
+              </p>
+              <span className="text-xs text-blue-400">Revenue sharing model</span>
+            </div>
+          </div>
+        </section>
+
+        {/* Webhooks */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4">Webhooks (Future)</h2>
+          <div className="p-4 bg-gray-500/10 border border-gray-500/20 rounded-lg mb-4">
+            <p className="text-sm text-gray-400">
+              Webhook functionality will be available with core payment APIs in Phase 2.
+            </p>
+          </div>
+          <p className="text-foreground-secondary mb-4">
+            NEDApay will send webhook notifications to your application when payment order statuses change.
+          </p>
+          
+          <h3 className="text-lg font-medium mb-3">Example (Planned)</h3>
+          <div className="p-4 bg-code-background border border-code-border rounded-lg font-mono text-sm opacity-60">
 {`{
   "event": "order.completed",
   "data": {

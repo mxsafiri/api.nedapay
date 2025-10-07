@@ -218,7 +218,7 @@ export default function QuickstartPage() {
             <div className="p-4 border border-border rounded-lg">
               <h4 className="font-medium mb-2">Setup Steps</h4>
               <ol className="list-decimal list-inside space-y-2 text-sm text-foreground-secondary">
-                <li>Log into your dashboard at <a href="#" className="text-blue-400 hover:underline">portal.nedapay.io</a></li>
+                <li>Log into your dashboard at <a href="https://portal.nedapay.xyz/" className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">portal.nedapay.xyz</a></li>
                 <li>Navigate to Settings → Webhooks</li>
                 <li>Enter your webhook URL (e.g., https://your-domain.com/webhooks/nedapay)</li>
                 <li>Save the configuration</li>
