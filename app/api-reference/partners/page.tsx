@@ -88,7 +88,7 @@ export default function PartnersAPIPage() {
                   <p className="text-foreground-secondary mb-2">
                     Track payment progress and delivery confirmation in real-time
                   </p>
-                  <code className="text-sm text-blue-400">/partners/payments/{id}</code>
+                  <code className="text-sm text-blue-400">/partners/payments/[id]</code>
                 </div>
               </div>
             </Link>
