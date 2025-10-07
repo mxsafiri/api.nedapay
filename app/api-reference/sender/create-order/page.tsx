@@ -33,7 +33,7 @@ export default function CreatePaymentOrderPage() {
             description="Create a payment order for stablecoin to fiat conversion via liquidity pools"
             requestBody={{
               "amount": "100",
-              "token": "USDT",
+              "token": "USDC",
               "network": "base",
               "rate": "260000.00",
               "recipient": {
@@ -52,7 +52,7 @@ export default function CreatePaymentOrderPage() {
               "data": {
                 "id": "550e8400-e29b-41d4-a716-446655440000",
                 "amount": "100",
-                "token": "USDT",
+                "token": "USDC",
                 "network": "base",
                 "receiveAddress": "0x9876543210987654321098765432109876543210",
                 "validUntil": "2024-01-15T10:30:00Z",
@@ -81,7 +81,7 @@ export default function CreatePaymentOrderPage() {
               <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
                 <h4 className="font-medium text-green-400 mb-2">✅ Supported Features</h4>
                 <ul className="text-sm text-green-300 space-y-1">
-                  <li>• Base network liquidity pools (USDT/USDC)</li>
+                  <li>• Base network liquidity pools (USDC native)</li>
                   <li>• Real-time exchange rates</li>
                   <li>• Mobile money integration (M-Pesa, Mixx by Yas)</li>
                   <li>• Bank account transfers</li>
@@ -123,7 +123,7 @@ export default function CreatePaymentOrderPage() {
                       <span className="px-2 py-1 bg-red-500/10 text-red-400 rounded text-xs">Required</span>
                     </td>
                     <td className="p-4 text-sm text-foreground-secondary">
-                      Amount of tokens to send (e.g., &quot;100&quot; for 100 USDT)
+                      Amount of tokens to send (e.g., &quot;100&quot; for 100 USDC)
                     </td>
                   </tr>
                   <tr className="border-b border-border">
@@ -133,7 +133,7 @@ export default function CreatePaymentOrderPage() {
                       <span className="px-2 py-1 bg-red-500/10 text-red-400 rounded text-xs">Required</span>
                     </td>
                     <td className="p-4 text-sm text-foreground-secondary">
-                      Token symbol (USDT, USDC, TZS, KES, UGX)
+                      Token symbol (USDC, USDbC, TZS, KES, UGX)
                     </td>
                   </tr>
                   <tr className="border-b border-border">
@@ -276,7 +276,7 @@ export default function CreatePaymentOrderPage() {
   "data": {
     "id": "550e8400-e29b-41d4-a716-446655440000",
     "amount": "100",
-    "token": "USDT",
+    "token": "USDC",
     "network": "base",
     "receiveAddress": "0x9876543210987654321098765432109876543210",
     "validUntil": "2024-01-15T10:30:00Z",
@@ -322,7 +322,7 @@ export default function CreatePaymentOrderPage() {
                 <div className="p-4 bg-code-background border border-code-border rounded-lg font-mono text-sm">
 {`{
   "amount": "50",
-  "token": "USDT",
+  "token": "USDC",
   "network": "base",
   "recipient": {
     "institution": "VODACOM",
@@ -364,7 +364,7 @@ export default function CreatePaymentOrderPage() {
                 <div className="p-4 bg-code-background border border-code-border rounded-lg font-mono text-sm">
 {`{
   "amount": "75",
-  "token": "USDT",
+  "token": "USDC",
   "network": "base",
   "recipient": {
     "institution": "MPESA",
@@ -428,7 +428,7 @@ export default function CreatePaymentOrderPage() {
   "message": "Insufficient liquidity",
   "error": {
     "code": "INSUFFICIENT_LIQUIDITY",
-    "details": "Pool balance too low for requested amount. Available: 50 USDT"
+    "details": "Pool balance too low for requested amount. Available: 50 USDC"
   }
 }`}
                 </div>

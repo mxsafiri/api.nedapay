@@ -68,8 +68,8 @@ export default function ListSupportedTokensPage() {
               "data": {
                 "tokens": [
                   {
-                    "symbol": "USDT",
-                    "name": "Tether USD",
+                    "symbol": "USDC",
+                    "name": "USD Coin",
                     "type": "stablecoin",
                     "decimals": 6,
                     "networks": [
@@ -202,7 +202,7 @@ export default function ListSupportedTokensPage() {
                   Stablecoin Focus
                 </h4>
                 <ul className="text-sm text-blue-300 space-y-1">
-                  <li>• Primary: USDT and USDC stablecoins</li>
+                  <li>• Primary: USDC native stablecoin</li>
                   <li>• Multi-network support (Base, Ethereum)</li>
                   <li>• USD-pegged for stable value transfers</li>
                   <li>• Optimized for fiat conversion operations</li>
@@ -225,7 +225,7 @@ export default function ListSupportedTokensPage() {
 
             <div className="p-4 bg-orange-500/10 border border-orange-500/20 rounded-lg">
               <p className="text-orange-400 text-sm">
-                <strong>Integration Focus:</strong> NEDApay primarily supports USD stablecoins (USDT/USDC) 
+                <strong>Integration Focus:</strong> NEDApay primarily supports USDC stablecoin 
                 for reliable value transfer and fiat conversion. Base network is the primary infrastructure 
                 with Ethereum as secondary support for broader compatibility.
               </p>
@@ -314,7 +314,7 @@ export default function ListSupportedTokensPage() {
               <div className="p-4 border border-border rounded-lg">
                 <h4 className="font-medium mb-2">Basic Token Information</h4>
                 <ul className="space-y-2 text-sm text-foreground-secondary">
-                  <li><code>symbol</code> - Token ticker symbol (USDT, USDC)</li>
+                  <li><code>symbol</code> - Token ticker symbol (USDC, USDbC)</li>
                   <li><code>name</code> - Full token name</li>
                   <li><code>type</code> - Token category (stablecoin, utility, governance)</li>
                   <li><code>decimals</code> - Number of decimal places for precision</li>
@@ -351,7 +351,7 @@ export default function ListSupportedTokensPage() {
               <div className="p-4 border border-green-500/20 bg-green-500/10 rounded-lg">
                 <h3 className="text-lg font-medium text-green-400 mb-3 flex items-center">
                   <Shield className="h-5 w-5 mr-2" />
-                  USDT (Tether USD)
+                  USDC (USD Coin)
                 </h3>
                 <ul className="text-sm text-green-300 space-y-2">
                   <li>• <strong>Networks:</strong> Base (primary), Ethereum</li>
@@ -454,15 +454,15 @@ export default function ListSupportedTokensPage() {
 
               {/* Sample Response */}
               <div>
-                <h3 className="text-lg font-medium mb-3">Sample Response - USDT Token</h3>
+                <h3 className="text-lg font-medium mb-3">Sample Response - USDC Token</h3>
                 <div className="p-4 bg-code-background border border-code-border rounded-lg font-mono text-sm">
 {`{
   "status": "success",
   "data": {
     "tokens": [
       {
-        "symbol": "USDT",
-        "name": "Tether USD",
+        "symbol": "USDC",
+        "name": "USD Coin",
         "type": "stablecoin",
         "decimals": 6,
         "networks": [

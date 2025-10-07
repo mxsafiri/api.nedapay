@@ -118,27 +118,27 @@ export default function StablecoinsPage() {
               </div>
             </div>
 
-            {/* USDT */}
+            {/* USDbC - Bridged USDC */}
             <div className="p-6 border border-border rounded-lg bg-background-secondary">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center">
                   <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center mr-4 border border-border">
                     <Image 
-                      src="/usdt-coin.svg" 
-                      alt="USDT" 
+                      src="/usdc-logo.svg" 
+                      alt="USDbC" 
                       width={32} 
                       height={32}
                       className="rounded-full"
                     />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold">Tether USD</h3>
-                    <p className="text-sm text-foreground-secondary">World&apos;s largest stablecoin by market cap</p>
+                    <h3 className="text-xl font-semibold">USD Base Coin (USDbC)</h3>
+                    <p className="text-sm text-foreground-secondary">Bridged USDC from Ethereum to Base</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <span className="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">Primary</span>
-                  <span className="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Multi-Chain</span>
+                  <span className="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Bridged</span>
+                  <span className="text-xs bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Base Only</span>
                 </div>
               </div>
               
@@ -148,52 +148,41 @@ export default function StablecoinsPage() {
                   <div className="space-y-3">
                     <div>
                       <div className="flex items-center justify-between mb-1">
-                        <span className="text-sm font-medium">Ethereum</span>
+                        <span className="text-sm font-medium">Base</span>
                         <span className="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">Live</span>
                       </div>
-                      <code className="text-xs bg-code-background px-2 py-1 rounded block break-all">0xdAC17F958D2ee523a2206206994597C13D831ec7</code>
+                      <code className="text-xs bg-code-background px-2 py-1 rounded block break-all">0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA</code>
                     </div>
-                    <div>
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="text-sm font-medium">Polygon</span>
-                        <span className="text-xs bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Live</span>
-                      </div>
-                      <code className="text-xs bg-code-background px-2 py-1 rounded block break-all">0xc2132D05D31c914a87C6611C10748AEb04B58e8F</code>
-                    </div>
-                    <div className="p-3 bg-orange-500/10 border border-orange-500/20 rounded-lg">
-                      <p className="text-xs text-orange-400 font-medium mb-1">Base Network</p>
-                      <p className="text-xs text-foreground-secondary">USDT is not currently available on Base network</p>
+                    <div className="p-3 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                      <p className="text-xs text-blue-400 font-medium mb-1">Migration Note</p>
+                      <p className="text-xs text-foreground-secondary">Being phased out in favor of native USDC</p>
                     </div>
                   </div>
                 </div>
                 <div>
                   <h4 className="font-medium mb-3">Features</h4>
                   <ul className="space-y-1 text-sm text-foreground-secondary">
-                    <li>• Largest market cap</li>
-                    <li>• High liquidity</li>
-                    <li>• Wide adoption</li>
-                    <li>• Multiple networks</li>
+                    <li>• Bridged from Ethereum</li>
+                    <li>• Base network compatibility</li>
+                    <li>• Lower transaction fees</li>
+                    <li>• Legacy support</li>
                   </ul>
                 </div>
                 <div>
                   <h4 className="font-medium mb-3">Use Cases</h4>
                   <ul className="space-y-1 text-sm text-foreground-secondary">
-                    <li>• High-volume partner transactions</li>
-                    <li>• Institutional settlements</li>
-                    <li>• Liquidity management</li>
-                    <li>• Multi-currency operations</li>
+                    <li>• Legacy Base integrations</li>
+                    <li>• Transition to native USDC</li>
+                    <li>• Cross-chain bridging</li>
+                    <li>• Existing liquidity pools</li>
                   </ul>
                 </div>
               </div>
               
               <div className="flex items-center space-x-4 text-sm">
-                <a href="https://tether.to/" className="flex items-center text-green-400 hover:underline">
+                <a href="https://www.circle.com/blog/usdc-now-available-natively-on-base" className="flex items-center text-blue-400 hover:underline">
                   <ExternalLink className="h-4 w-4 mr-1" />
-                  Tether Website
-                </a>
-                <a href="https://tether.to/transparency/" className="flex items-center text-green-400 hover:underline">
-                  <ExternalLink className="h-4 w-4 mr-1" />
-                  Transparency Reports
+                  Migration Guide
                 </a>
               </div>
             </div>
@@ -378,7 +367,7 @@ export default function StablecoinsPage() {
                   </td>
                   <td className="p-4 text-sm">2-3 seconds</td>
                   <td className="p-4 text-sm">~$0.001</td>
-                  <td className="p-4 text-sm">USDC, USDT</td>
+                  <td className="p-4 text-sm">USDC, DAI</td>
                   <td className="p-4 text-sm">Lowest fees, high-volume transactions</td>
                 </tr>
                 <tr>
@@ -392,7 +381,7 @@ export default function StablecoinsPage() {
                   </td>
                   <td className="p-4 text-sm">12-15 seconds</td>
                   <td className="p-4 text-sm">$2-20</td>
-                  <td className="p-4 text-sm">USDC, USDT</td>
+                  <td className="p-4 text-sm">USDC, DAI</td>
                   <td className="p-4 text-sm">Maximum liquidity, established network</td>
                 </tr>
               </tbody>
@@ -471,13 +460,12 @@ export default function StablecoinsPage() {
                 <span className="font-medium">2024 - Completed</span>
                 <span className="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">Live</span>
               </div>
-              <p className="text-sm text-foreground-secondary">USDC and USDT support on Base, Polygon, and Ethereum networks</p>
+              <p className="text-sm text-foreground-secondary">USDC native support on Base network with multi-chain compatibility</p>
             </div>
             
             <div className="p-4 border-l-4 border-green-500 bg-green-500/10 rounded-r-lg">
               <div className="flex items-center justify-between mb-2">
                 <span className="font-medium">2025 - Live</span>
-                <span className="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">Active</span>
               </div>
               <p className="text-sm text-foreground-secondary">CNGN and ZARP regional stablecoins integrated on Base network</p>
             </div>

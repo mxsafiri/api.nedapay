@@ -1,15 +1,15 @@
 import { ApiPlayground } from '@/components/api-playground'
 import { Lock, Clock, CheckCircle, AlertTriangle, Filter, TrendingUp } from 'lucide-react'
 
-export default function ListLockPaymentOrdersPage() {
+export default function ListSettlementOrdersPage() {
   return (
     <div className="container mx-auto px-6 py-8">
       <div className="max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">List Lock Payment Orders</h1>
+          <h1 className="text-3xl font-bold mb-2">List Settlement Orders</h1>
           <p className="text-foreground-secondary">
-            Retrieve all payment orders with active or recent liquidity locks that require provider attention for fiat settlement.
+            Retrieve pending settlement orders from NEDApay requiring fiat delivery to recipients through your local networks.
           </p>
         </div>
 
@@ -29,22 +29,22 @@ export default function ListLockPaymentOrdersPage() {
         <div className="mb-12">
           <ApiPlayground
             method="GET"
-            endpoint="/provider/lock-orders"
-            title="List Lock Payment Orders"
-            description="Retrieve payment orders requiring fiat settlement by liquidity providers"
+            endpoint="/provider/settlement-orders"
+            title="List Settlement Orders"
+            description="Retrieve pending settlement orders requiring fiat delivery to recipients"
             parameters={[
               {
                 name: "status",
                 type: "query",
                 required: false,
-                description: "Filter by lock status (locked, processing, expiring)",
-                example: "locked"
+                description: "Filter by settlement status (pending, processing, completed)",
+                example: "pending"
               },
               {
-                name: "currency",
+                name: "destination_currency",
                 type: "query",
                 required: false,
-                description: "Filter by destination currency (TZS, KES, UGX)",
+                description: "Filter by destination currency (TZS, KES, UGX, NGN)",
                 example: "TZS"
               },
               {
@@ -58,42 +58,36 @@ export default function ListLockPaymentOrdersPage() {
                 name: "priority",
                 type: "query",
                 required: false,
-                description: "Filter by urgency (high, normal, low)",
+                description: "Filter by order priority (high, medium, low)",
                 example: "high"
               }
             ]}
             responseExample={{
               "status": "success",
-              "message": "Lock orders retrieved successfully",
+              "message": "Settlement orders retrieved successfully",
               "data": {
                 "orders": [
                   {
-                    "orderId": "550e8400-e29b-41d4-a716-446655440000",
-                    "lockStatus": "locked",
+                    "settlement_id": "sett_550e8400e29b41d4a716446655440000",
+                    "status": "pending",
+                    "usdc_amount": "100.00",
+                    "destination_currency": "TZS",
+                    "destination_amount": "260000.00",
+                    "exchange_rate": "2600.00",
+                    "recipient": {
+                      "name": "John Doe",
+                      "phone": "+255744123456",
+                      "institution": "VODACOM_MPESA",
+                      "account_identifier": "255744123456",
+                      "country": "TZ"
+                    },
+                    "settlement_fee": "2.50",
+                    "usdc_settlement_amount": "97.50",
+                    "expires_at": "2024-01-15T10:15:00Z",
                     "priority": "high",
-                    "liquidityLock": {
-                      "poolId": "base-usdt-pool-001",
-                      "token": "USDT",
-                      "lockedAmount": "100.00",
-                      "lockExpiry": "2024-01-15T10:15:00Z",
-                      "timeRemaining": "12m 30s"
-                    },
-                    "settlement": {
-                      "currency": "TZS",
-                      "fiatAmount": "260000.00",
-                      "recipient": {
-                        "institution": "VODACOM",
-                        "accountIdentifier": "255744123456",
-                        "accountName": "John Doe"
-                      },
-                      "memo": "Payment for services"
-                    },
-                    "fees": {
-                      "providerFee": "2.50",
-                      "networkFee": "0.50"
-                    },
-                    "createdAt": "2024-01-15T10:00:00Z",
-                    "assignedAt": "2024-01-15T10:00:15Z"
+                    "partner_reference": "ABSA-TXN-001234",
+                    "created_at": "2024-01-15T10:00:00Z",
+                    "updated_at": "2024-01-15T10:00:15Z"
                   }
                 ],
                 "summary": {
@@ -373,8 +367,8 @@ export default function ListLockPaymentOrdersPage() {
         "lockStatus": "locked",
         "priority": "high",
         "liquidityLock": {
-          "poolId": "base-usdt-pool-001",
-          "token": "USDT",
+          "poolId": "base-usdc-pool-001",
+          "token": "USDC",
           "lockedAmount": "100.00",
           "lockExpiry": "2024-01-15T10:15:00Z",
           "timeRemaining": "3m 45s"
